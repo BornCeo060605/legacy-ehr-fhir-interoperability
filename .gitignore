@@ -1,0 +1,37 @@
+# Secrets and local config
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ground truth & evaluation (Protected from mapping pipeline)
+ground_truth.db
+*ground_truth*
+*hidden_mapping*
+*evaluation_answers*
+*.db
+*.sqlite
+*.sqlite3
+
+# Outputs
+outputs/runs/
+
+# Large External Knowledge Dumps
+resources/raw/
+retrieval/vector_db/
+*.zip
+*.bin
