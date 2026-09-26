@@ -1,0 +1,47 @@
+{
+  "309362": {
+    "rxcui": "309362",
+    "name": "clopidogrel 75 MG Oral Tablet",
+    "synonym": "clopidogrel 75 MG (as clopidogrel bisulfate 97.875 MG) Oral Tablet",
+    "tty": "SCD",
+    "language": "ENG",
+    "suppress": "N",
+    "umlscui": ""
+  },
+  "312961": {
+    "rxcui": "312961",
+    "name": "simvastatin 20 MG Oral Tablet",
+    "synonym": "",
+    "tty": "SCD",
+    "language": "ENG",
+    "suppress": "N",
+    "umlscui": ""
+  },
+  "866412": {
+    "rxcui": "866412",
+    "name": "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+    "synonym": "metoprolol succinate 100 MG 24 HR Extended Release Oral Tablet",
+    "tty": "SCD",
+    "language": "ENG",
+    "suppress": "N",
+    "umlscui": ""
+  },
+  "705129": {
+    "rxcui": "705129",
+    "name": "nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+    "synonym": "NTG 0.4 MG/ACTUAT Mucosal Spray",
+    "tty": "SCD",
+    "language": "ENG",
+    "suppress": "N",
+    "umlscui": ""
+  },
+  "1049221": {
+    "rxcui": "1049221",
+    "name": "acetaminophen 325 MG / oxycodone hydrochloride 5 MG Oral Tablet",
+    "synonym": "APAP 325 MG / oxycodone hydrochloride 5 MG Oral Tablet",
+    "tty": "SCD",
+    "language": "ENG",
+    "suppress": "N",
+    "umlscui": ""
+  }
+}
