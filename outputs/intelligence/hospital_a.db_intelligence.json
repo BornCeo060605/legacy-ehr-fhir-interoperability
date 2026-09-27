@@ -1,0 +1,168 @@
+[
+  {
+    "table_name": "DIAGNOSIS",
+    "column_name": "DIAGNOSIS_ID",
+    "role": {
+      "role_category": "primary_identifier",
+      "target_concept_type": "Diagnosis",
+      "candidate_terminology": "UNKNOWN",
+      "semantic_meaning": "Unique identifier for a diagnosis record",
+      "confidence": 0.9,
+      "observed_facts": [
+        "Column is of type TEXT",
+        "All values are unique (100% uniqueness)",
+        "No null values",
+        "Sample values resemble UUIDs",
+        "Column is not declared as primary key, but is unique"
+      ],
+      "inferred_facts": [
+        "The column likely serves as a unique identifier for each diagnosis record",
+        "The format of the values suggests a generated identifier, possibly a UUID"
+      ],
+      "unknowns": [
+        "The specific generation mechanism or purpose of the identifier is unclear",
+        "No clear mapping to a known terminology or standard"
+      ],
+      "rationale": "The uniqueness and UUID-like format of the values, combined with the column's presence in the DIAGNOSIS table, suggest that it serves as a primary identifier for diagnosis records. However, the lack of a clear mapping to a known terminology or standard, and the uncertainty surrounding the generation mechanism, prevent a higher confidence level."
+    },
+    "timestamp": "2026-09-25T18:36:44.156948"
+  },
+  {
+    "table_name": "DIAGNOSIS",
+    "column_name": "PATIENT_ID",
+    "role": {
+      "role_category": "foreign_reference",
+      "target_concept_type": "Patient",
+      "candidate_terminology": "FHIR_CORE",
+      "semantic_meaning": "Reference to a patient's identifier in other tables",
+      "confidence": 1.0,
+      "observed_facts": [
+        "Column is of type TEXT and contains UUID-like values",
+        "Column has 0 null values and 354 distinct values (2.5% uniqueness)",
+        "Column is not a primary key and is not unique",
+        "Sample values are in the format of UUIDs",
+        "Top frequent values are also in the format of UUIDs",
+        "Observed 100% overlap with ENCOUNTER.PATIENT_ID, PATIENT_MASTER.PATIENT_ID, and VITAL_SIGNS.PATIENT_ID"
+      ],
+      "inferred_facts": [
+        "The column likely contains foreign key references to patient identifiers in other tables",
+        "The use of UUIDs suggests a standardized identifier for patients across tables"
+      ],
+      "unknowns": [],
+      "rationale": "The column's UUID-like values, 100% overlap with other patient identifier columns, and lack of uniqueness suggest it is a foreign key reference to patient identifiers in other tables, consistent with a FHIR_CORE terminology."
+    },
+    "timestamp": "2026-09-25T18:36:47.683073"
+  },
+  {
+    "table_name": "DIAGNOSIS",
+    "column_name": "SNOMED_CODE",
+    "role": {
+      "role_category": "terminology_code",
+      "target_concept_type": "Condition",
+      "candidate_terminology": "SNOMED_CT",
+      "semantic_meaning": "SNOMED CT code representing a diagnosis",
+      "confidence": 0.95,
+      "observed_facts": [
+        "Column name is SNOMED_CODE",
+        "Declared SQLite type is TEXT",
+        "No null values",
+        "236 distinct values out of 13953 rows",
+        "Sample values resemble SNOMED CT concept IDs"
+      ],
+      "inferred_facts": [
+        "Format of sample values matches SNOMED CT concept ID format",
+        "High frequency of specific values suggests common diagnoses"
+      ],
+      "unknowns": [
+        "Specific version of SNOMED CT used is not specified"
+      ],
+      "rationale": "The column name, data type, and sample values strongly suggest that this column contains SNOMED CT codes for diagnoses, with high confidence due to the specific naming and formatting."
+    },
+    "timestamp": "2026-09-25T18:36:48.795334"
+  },
+  {
+    "table_name": "DIAGNOSIS",
+    "column_name": "DIAGNOSIS_NAME",
+    "role": {
+      "role_category": "concept_display",
+      "target_concept_type": "Condition",
+      "candidate_terminology": "SNOMED_CT",
+      "semantic_meaning": "Human-readable description of a diagnosis or finding",
+      "confidence": 0.9,
+      "observed_facts": [
+        "Column contains descriptive text values",
+        "Sample values resemble clinical findings or diagnoses",
+        "Distinct count is relatively low (1.7%) compared to total rows",
+        "Top frequent values include terms like 'Medication review due', 'Stress', and 'Gingivitis'",
+        "Column is not unique and has no primary key"
+      ],
+      "inferred_facts": [
+        "Format and content of values suggest a relationship with SNOMED CT concepts, given the presence of terms like '(finding)' and '(disorder)'",
+        "The presence of a separate 'SNOMED_CODE' column in the same table implies a potential link to standardized terminology"
+      ],
+      "unknowns": [
+        "Lack of explicit mapping or cross-reference to SNOMED CT codes in the provided data",
+        "Uncertainty about the specific SNOMED CT concepts or hierarchies represented by the values in this column"
+      ],
+      "rationale": "The combination of descriptive text values, low distinct count, and resemblance to clinical findings or diagnoses suggests that this column represents human-readable descriptions of conditions or findings, potentially related to SNOMED CT concepts."
+    },
+    "timestamp": "2026-09-25T18:36:53.750783"
+  },
+  {
+    "table_name": "DIAGNOSIS",
+    "column_name": "ONSET_DATE",
+    "role": {
+      "role_category": "timestamp_datetime",
+      "target_concept_type": "Condition",
+      "candidate_terminology": "UNKNOWN",
+      "semantic_meaning": "Date and time when a diagnosis was first identified or reported",
+      "confidence": 0.95,
+      "observed_facts": [
+        "Column name is ONSET_DATE",
+        "Declared SQLite type is TEXT",
+        "All values are in ISO8601 format",
+        "No null values",
+        "High distinct count (81.9%)",
+        "Moderate value overlaps with ENCOUNTER.START_DATE, ENCOUNTER.END_DATE, and VITAL_SIGNS.MEASUREMENT_DATE"
+      ],
+      "inferred_facts": [
+        "Format matches ISO8601, suggesting a datetime value",
+        "Overlaps with ENCOUNTER dates suggest a relationship between diagnosis onset and encounter events",
+        "Overlaps with VITAL_SIGNS.MEASUREMENT_DATE suggest a possible connection to clinical measurements"
+      ],
+      "unknowns": [
+        "Specific clinical context or rules governing ONSET_DATE values",
+        "Relationship between ONSET_DATE and other columns in the DIAGNOSIS table, such as SNOMED_CODE or DIAGNOSIS_NAME"
+      ],
+      "rationale": "The column name, format, and overlaps with other datetime columns suggest that ONSET_DATE represents a timestamp for when a diagnosis was first identified or reported. The high distinct count and lack of null values further support this interpretation. While the exact clinical context is unclear, the evidence points to a datetime value related to condition or diagnosis onset."
+    },
+    "timestamp": "2026-09-25T18:37:14.100204"
+  },
+  {
+    "table_name": "DIAGNOSIS",
+    "column_name": "STATUS",
+    "role": {
+      "role_category": "status_code",
+      "target_concept_type": "Condition",
+      "candidate_terminology": "UNKNOWN",
+      "semantic_meaning": "Status of a diagnosis, indicating whether it is active or resolved",
+      "confidence": 0.9,
+      "observed_facts": [
+        "Column has only two distinct values: 'active' and 'resolved'",
+        "Column is of type TEXT and has no null values",
+        "Sample values are 'active' and 'resolved', which are typical status indicators",
+        "Top frequent values are 'resolved' and 'active', with 'resolved' being the most common"
+      ],
+      "inferred_facts": [
+        "The column appears to track the current state of a diagnosis",
+        "The values 'active' and 'resolved' suggest a simple status tracking system"
+      ],
+      "unknowns": [
+        "No clear mapping to a standard terminology like SNOMED_CT or LOINC",
+        "Uncertainty about the specific workflow or business rules governing the status updates"
+      ],
+      "rationale": "The column's name, data type, and sample values all suggest that it represents a status code for a diagnosis, with 'active' and 'resolved' being the two possible states. The high confidence level is due to the clear and consistent pattern in the data, but the lack of a clear mapping to a standard terminology introduces some uncertainty."
+    },
+    "timestamp": "2026-09-25T18:37:21.510971"
+  }
+]

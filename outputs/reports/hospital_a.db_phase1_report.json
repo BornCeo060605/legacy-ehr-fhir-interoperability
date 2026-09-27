@@ -1,0 +1,2042 @@
+{
+  "run_id": "PHASE1_RUN_20260927_034746_ac4d9e",
+  "timestamp": "2026-09-27T04:18:33.124224",
+  "database_path": "C:\\Users\\Administrator\\VISHNU PROJECT NEW\\data\\hospital_a.db",
+  "database_name": "hospital_a.db",
+  "database_checksum_sha256": "380fbfc747c2b43909ba3e9eb43c3881bb5cb7d5b094cb761c41ba839928ecd4",
+  "llm_provider": "openrouter",
+  "llm_model": "meta-llama/llama-3.3-70b-instruct",
+  "total_fields": 30,
+  "accepted_count": 29,
+  "review_count": 0,
+  "unsupported_count": 1,
+  "field_reports": [
+    {
+      "legacy_field": "DIAGNOSIS.DIAGNOSIS_ID",
+      "table_name": "DIAGNOSIS",
+      "column_name": "DIAGNOSIS_ID",
+      "semantic_meaning": "Unique identifier for a diagnosis",
+      "observed_facts": [
+        "TEXT type with 13953 distinct values",
+        "0.0% null values",
+        "100% unique non-null values",
+        "Sample values resemble UUIDs (e.g., '8d1edfd0-df60-b5c8-8167-81bc5f27c8d7')"
+      ],
+      "inferred_facts": [
+        "The field likely serves as a primary identifier for diagnoses due to its uniqueness and lack of null values",
+        "The values are likely generated programmatically, given their UUID-like format"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'Condition.identifier' (Identifier, Cardinality: 0..*). Description: External Ids for this condition"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Condition",
+        "target_path": "Condition.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field DIAGNOSIS.DIAGNOSIS_ID represents a unique identifier for a diagnosis, which aligns with the semantic meaning of Condition.identifier in FHIR R4. The profiling facts indicate that the values are unique and have a high semantic confidence of 0.95, supporting the mapping to Condition.identifier.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.96,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Condition.identifier'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.96 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.96) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.96,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Condition.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:48:57.062225"
+    },
+    {
+      "legacy_field": "DIAGNOSIS.PATIENT_ID",
+      "table_name": "DIAGNOSIS",
+      "column_name": "PATIENT_ID",
+      "semantic_meaning": "Foreign key referencing a patient's identifier",
+      "observed_facts": [
+        "Observed type 'TEXT' with 354 distinct values",
+        "0.0% null values across 13953 non-null rows",
+        "Fully contained in ENCOUNTER.PATIENT_ID, PATIENT_MASTER.PATIENT_ID, and VITAL_SIGNS.PATIENT_ID"
+      ],
+      "inferred_facts": [
+        "Values in DIAGNOSIS.PATIENT_ID are consistent with a foreign-key patient reference",
+        "FHIR R4 structural definitions support the use of identifiers for patient references"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.hospitalization.dietPreference' (CodeableConcept, 0..*): Diet preferences reported by the patient",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient",
+        "FHIR R4 element 'Patient.active' (boolean, 0..1): Whether this patient's record is in active use"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "required",
+        "binding_valueset": "null",
+        "rationale": "The legacy field DIAGNOSIS.PATIENT_ID is a foreign key referencing a patient's identifier, which directly maps to the FHIR R4 element Patient.identifier, as it represents an identifier for the patient.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 1.0,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 1.00 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.identifier'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:49:43.680698"
+    },
+    {
+      "legacy_field": "DIAGNOSIS.SNOMED_CODE",
+      "table_name": "DIAGNOSIS",
+      "column_name": "SNOMED_CODE",
+      "semantic_meaning": "SNOMED CT code for diagnosis",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "236 distinct values across 13953 non-null rows",
+        "Samples of values are in the format of SNOMED CT codes (e.g., '224299000', '162864005', '239873007')",
+        "0.0% null values"
+      ],
+      "inferred_facts": [
+        "The field is likely used to store standardized codes for diagnoses",
+        "The use of SNOMED CT codes suggests a high level of standardization and interoperability"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 choice element 'MedicationRequest.medicationCodeableConcept' (specialization of MedicationRequest.medication[x], Cardinality: 1..1). Description: Medication to be taken"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Condition",
+        "target_path": "Condition.code",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "1..1",
+        "binding_strength": "preferred",
+        "binding_valueset": "http://snomed.info/sct",
+        "rationale": "The legacy field DIAGNOSIS.SNOMED_CODE represents a SNOMED CT code for a diagnosis, which aligns with the Condition resource in FHIR. The Condition.code element is the most suitable choice to represent this information, as it is used to capture the code for the condition, and SNOMED CT is a preferred terminology for this element.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Observation.code"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.92,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.4,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.8,
+        "evidence_strength": "MODERATE",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.92 based on profiling facts.",
+          "terminology": "No direct or exact terminology matches found.",
+          "fhir": "Canonical FHIR element candidate 'Condition.code' corroborated.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.80 with MODERATE evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R2_MODERATE_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.75 AND evidence_strength IN ('STRONG', 'MODERATE') THEN ACCEPTED",
+        "reason": "Sufficient mapping confidence (0.80) backed by MODERATE evidence strength.",
+        "confidence": 0.8,
+        "evidence_strength": "MODERATE"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (RxNorm, FHIR_R4, OHDSI)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Condition.code)",
+        "Deterministic Decision Engine (R2_MODERATE_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:51:32.765389"
+    },
+    {
+      "legacy_field": "DIAGNOSIS.DIAGNOSIS_NAME",
+      "table_name": "DIAGNOSIS",
+      "column_name": "DIAGNOSIS_NAME",
+      "semantic_meaning": "Clinical diagnosis or finding name",
+      "observed_facts": [
+        "Field type is TEXT",
+        "236 distinct values across 13953 non-null rows",
+        "Sample values contain SNOMED_CT-like phrases (e.g., 'Osteoarthritis of knee (disorder)')",
+        "FHIR R4 Condition.code element is a CodeableConcept with a binding example"
+      ],
+      "inferred_facts": [
+        "The field likely represents a coded concept from a terminology system",
+        "SNOMED_CT is a suitable terminology system for condition and diagnosis concepts"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'Condition.code' (CodeableConcept, Cardinality: 0..1). Description: Identification of the condition, problem or diagnosis [Binding: example]"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Condition",
+        "target_path": "Condition.code",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "0..1",
+        "binding_strength": "example",
+        "binding_valueset": "http://snomed.info/sct",
+        "rationale": "The legacy field DIAGNOSIS.DIAGNOSIS_NAME represents a clinical diagnosis or finding name, which aligns with the semantic meaning of Condition.code in FHIR R4. The terminology interpretation of Verified SNOMED_CT also supports this mapping, as SNOMED CT is a commonly used terminology for coding conditions and diagnoses.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.96,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Condition.code'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.96 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.96) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.96,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (SNOMED_CT, OHDSI, FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Condition.code)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:53:51.933901"
+    },
+    {
+      "legacy_field": "DIAGNOSIS.ONSET_DATE",
+      "table_name": "DIAGNOSIS",
+      "column_name": "ONSET_DATE",
+      "semantic_meaning": "Date and time when a diagnosis was first identified or suspected",
+      "observed_facts": [
+        "Observed type 'TEXT' with 11431 distinct values across 13953 non-null rows",
+        "Sample values match ISO 8601 datetime format",
+        "Moderate value overlap (48.0%) with ENCOUNTER.START_DATE and (30.7%) with ENCOUNTER.END_DATE"
+      ],
+      "inferred_facts": [
+        "DIAGNOSIS.ONSET_DATE likely represents a timestamp for a clinical event",
+        "The field's values are likely related to the timing of a diagnosis or condition"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.birthDate' (date, 0..1): The date of birth for the individual",
+        "FHIR R4 element 'Condition.onset[x]' (dateTime, 0..1): Estimated or actual date,  date-time, or age",
+        "FHIR R4 element 'Condition.recordedDate' (dateTime, 0..1): Date record was first recorded"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Condition",
+        "target_path": "Condition.onset",
+        "target_element_type": "dateTime",
+        "cardinality": "0..1",
+        "binding_strength": "preferred",
+        "binding_valueset": "null",
+        "rationale": "The legacy field DIAGNOSIS.ONSET_DATE represents the date and time when a diagnosis was first identified or suspected, which aligns with the semantic meaning of Condition.onset[x] in FHIR R4. The provided samples also match the expected format of dateTime, further supporting this mapping.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Condition.recordedDate"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.98,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.97,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.98 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Condition.onset'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.97 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.97) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.97,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Condition.onset)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:54:55.025071"
+    },
+    {
+      "legacy_field": "DIAGNOSIS.STATUS",
+      "table_name": "DIAGNOSIS",
+      "column_name": "STATUS",
+      "semantic_meaning": "Diagnosis status code",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "2 distinct values across 13953 non-null rows",
+        "Samples: ['active', 'resolved']"
+      ],
+      "inferred_facts": [
+        "The field likely represents a status or state related to a diagnosis",
+        "The values 'active' and 'resolved' suggest a binary status indicator"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.maritalStatus' (CodeableConcept, 0..1): Marital (civil) status of a patient",
+        "FHIR R4 element 'MedicationRequest.statusReason' (CodeableConcept, 0..1): Reason for current status",
+        "FHIR R4 element 'Encounter.statusHistory' (BackboneElement, 0..*): List of past encounter statuses"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Condition",
+        "target_path": "Condition.clinicalStatus",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "0..1",
+        "binding_strength": "preferred",
+        "binding_valueset": "http://hl7.org/fhir/ValueSet/condition-clinical",
+        "rationale": "The legacy field 'DIAGNOSIS.STATUS' represents the status of a diagnosis, which aligns with the clinicalStatus element in the Condition resource. The samples provided ('active', 'resolved') match the concepts in the condition-clinical ValueSet.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Condition.verificationStatus"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.92,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.9,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.92 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'Condition.clinicalStatus' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.90 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.90) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.9,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Condition.clinicalStatus)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:56:28.836672"
+    },
+    {
+      "legacy_field": "ENCOUNTER.ENCOUNTER_ID",
+      "table_name": "ENCOUNTER",
+      "column_name": "ENCOUNTER_ID",
+      "semantic_meaning": "Unique Encounter Identifier",
+      "observed_facts": [
+        "Observed type 'TEXT'",
+        "22612 distinct values across 22612 non-null rows (0.0% null)",
+        "100% unique non-null values (candidate identifier)"
+      ],
+      "inferred_facts": [
+        "The field ENCOUNTER.ENCOUNTER_ID is likely a primary identifier for encounters based on its uniqueness and data type",
+        "The field's values resemble UUIDs (Universally Unique Identifiers), which are commonly used as identifiers in healthcare systems"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'Encounter.identifier' (Identifier, Cardinality: 0..*). Description: Identifier(s) by which this encounter is known"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Encounter",
+        "target_path": "Encounter.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The Encounter.identifier element in FHIR R4 is used to store identifiers for the encounter, which aligns with the semantic meaning of a unique encounter identifier. The profiling facts also support this mapping, as the values are unique and have a high semantic confidence of 0.99.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.99,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.99 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Encounter.identifier'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Encounter.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:57:04.011611"
+    },
+    {
+      "legacy_field": "ENCOUNTER.PATIENT_ID",
+      "table_name": "ENCOUNTER",
+      "column_name": "PATIENT_ID",
+      "semantic_meaning": "Reference to a patient's unique identifier",
+      "observed_facts": [
+        "Observed type 'TEXT'; 354 distinct values across 22612 non-null rows (0.0% null); Samples: ['8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc', 'e10377b0-54f0-cc84-20dd-4ff3854e371c', '1e961744-0913-72cf-6d66-fc33550d7e01']"
+      ],
+      "inferred_facts": [
+        "The column likely represents a foreign key referencing the patient's identifier in the PATIENT_MASTER table",
+        "The UUID-like format of the values suggests a unique identifier for each patient"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.hospitalization.dietPreference' (CodeableConcept, 0..*): Diet preferences reported by the patient",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient",
+        "FHIR R4 element 'Patient.active' (boolean, 0..1): Whether this patient's record is in active use"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Encounter",
+        "target_path": "Encounter.subject",
+        "target_element_type": "Reference",
+        "cardinality": "1..1",
+        "binding_strength": "required",
+        "binding_valueset": "null",
+        "rationale": "The legacy field ENCOUNTER.PATIENT_ID represents a reference to a patient's unique identifier in the context of an encounter. According to the critical rules, in event tables like ENCOUNTER, a patient reference column maps to [Resource].subject, which in this case is Encounter.subject.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Patient.identifier"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.85,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.88,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.85 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'Encounter.subject' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.88 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.88) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.88,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Encounter.subject)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T03:58:16.838288"
+    },
+    {
+      "legacy_field": "ENCOUNTER.START_DATE",
+      "table_name": "ENCOUNTER",
+      "column_name": "START_DATE",
+      "semantic_meaning": "Encounter start date and time",
+      "observed_facts": [
+        "Observed type 'TEXT' with 22107 distinct values",
+        "Samples match ISO 8601 datetime format",
+        "Moderate value overlap with VITAL_SIGNS.MEASUREMENT_DATE, DIAGNOSIS.ONSET_DATE, and MEDICATION.PRESCRIBED_DATE"
+      ],
+      "inferred_facts": [
+        "ENCOUNTER.START_DATE likely represents a timestamp for the start of an encounter",
+        "The field's values are likely used to track and manage patient encounters"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.period' (Period, 0..1): The start and end time of the encounter",
+        "FHIR R4 element 'Patient.birthDate' (date, 0..1): The date of birth for the individual",
+        "FHIR R4 element 'Condition.encounter' (Reference, 0..1): Encounter created as part of"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Encounter",
+        "target_path": "Encounter.period.start",
+        "target_element_type": "dateTime",
+        "cardinality": "0..1",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field ENCOUNTER.START_DATE represents the start date and time of an encounter, which aligns with the FHIR R4 element Encounter.period.start. The semantic confidence is high (0.98), and the profiling facts indicate that the data type is consistent with a dateTime format.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Encounter.period"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.98,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.92,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.98 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'Encounter.period.start' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.92 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.92) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.92,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Encounter.period.start)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:00:04.374280"
+    },
+    {
+      "legacy_field": "ENCOUNTER.END_DATE",
+      "table_name": "ENCOUNTER",
+      "column_name": "END_DATE",
+      "semantic_meaning": "End date and time of an encounter",
+      "observed_facts": [
+        "Observed type 'TEXT' with 22585 distinct values across 22612 non-null rows",
+        "Sample values match ISO 8601 datetime format",
+        "Moderate value overlap with VITAL_SIGNS.MEASUREMENT_DATE, MEDICATION.PRESCRIBED_DATE, and DIAGNOSIS.ONSET_DATE"
+      ],
+      "inferred_facts": [
+        "ENCOUNTER.END_DATE likely represents a timestamp for the end of an encounter",
+        "The field's values are likely used to track the duration or completion of an encounter"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.period' (Period, 0..1): The start and end time of the encounter",
+        "FHIR R4 element 'Patient.birthDate' (date, 0..1): The date of birth for the individual",
+        "FHIR R4 element 'Condition.encounter' (Reference, 0..1): Encounter created as part of"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Encounter",
+        "target_path": "Encounter.period.end",
+        "target_element_type": "dateTime",
+        "cardinality": "0..1",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field ENCOUNTER.END_DATE represents the end date and time of an encounter, which aligns with the FHIR R4 Encounter.period.end element. The high semantic confidence of 0.98 and the observed data type 'TEXT' with datetime format samples support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Encounter.period"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.98,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.92,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.98 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'Encounter.period.end' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.92 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.92) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.92,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Encounter.period.end)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:01:33.497621"
+    },
+    {
+      "legacy_field": "ENCOUNTER.ENCOUNTER_TYPE",
+      "table_name": "ENCOUNTER",
+      "column_name": "ENCOUNTER_TYPE",
+      "semantic_meaning": "Encounter type or classification",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "5 distinct values across 22612 non-null rows",
+        "Samples include 'AMB', 'IMP', 'EMER', 'VR', 'HH'"
+      ],
+      "inferred_facts": [
+        "Values may represent different types of encounters, such as ambulatory, inpatient, or emergency",
+        "FHIR R4 elements Encounter.type and Encounter.serviceType are potential matches for this field"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.type' (CodeableConcept, 0..*): Specific type of encounter",
+        "FHIR R4 element 'Encounter.participant.type' (CodeableConcept, 0..*): Role of participant in encounter",
+        "FHIR R4 element 'Encounter.serviceType' (CodeableConcept, 0..1): Specific type of service"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Encounter",
+        "target_path": "Encounter.type",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "0..*",
+        "binding_strength": "preferred",
+        "binding_valueset": "null",
+        "rationale": "The Encounter.type element in FHIR R4 is defined as 'Specific type of encounter', which aligns with the semantic meaning of the legacy field ENCOUNTER.ENCOUNTER_TYPE. The high semantic confidence of 0.92 and the presence of distinct coded values ('AMB', 'IMP', 'EMER') support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Encounter.serviceType"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.92,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.4,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.85,
+        "evidence_strength": "MODERATE",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.92 based on profiling facts.",
+          "terminology": "No direct or exact terminology matches found.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Encounter.type'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.85 with MODERATE evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R2_MODERATE_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.75 AND evidence_strength IN ('STRONG', 'MODERATE') THEN ACCEPTED",
+        "reason": "Sufficient mapping confidence (0.85) backed by MODERATE evidence strength.",
+        "confidence": 0.85,
+        "evidence_strength": "MODERATE"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Encounter.type)",
+        "Deterministic Decision Engine (R2_MODERATE_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:02:38.453623"
+    },
+    {
+      "legacy_field": "ENCOUNTER.REASON",
+      "table_name": "ENCOUNTER",
+      "column_name": "REASON",
+      "semantic_meaning": "Completely unpopulated legacy field 'REASON'",
+      "observed_facts": [
+        "Column has 0 non-null values across 22612 rows."
+      ],
+      "inferred_facts": [],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.reasonCode' (CodeableConcept, 0..*): Coded reason the encounter takes place",
+        "FHIR R4 element 'Encounter.reasonReference' (Reference, 0..*): Reason the encounter takes place (reference)",
+        "FHIR R4 element 'Condition.encounter' (Reference, 0..1): Encounter created as part of"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Encounter",
+        "target_path": "ENCOUNTER.REASON",
+        "target_element_type": "Element",
+        "cardinality": "0..1",
+        "binding_strength": null,
+        "binding_valueset": null,
+        "rationale": "Unpopulated field (100% missing); cannot establish confirmed FHIR element mapping.",
+        "is_direct": false,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.1,
+        "retrieval_quality": 0.0,
+        "terminology_evidence_score": 0.0,
+        "fhir_evidence_score": 0.1,
+        "mapping_confidence": 0.1,
+        "evidence_strength": "NONE",
+        "components_explanation": {
+          "semantic": "Field is 100% null; semantic confidence minimal (0.10).",
+          "retrieval": "No external queries executed due to lack of data (0.0).",
+          "terminology": "No terminology codes observable (0.0).",
+          "fhir": "No direct FHIR candidate element corroborated (0.10).",
+          "summary": "Evidence strength NONE due to complete lack of observed data."
+        }
+      },
+      "decision": {
+        "decision": "UNSUPPORTED",
+        "rule_id": "R0_UNPOPULATED_FIELD",
+        "rule_description": "IF row_count > 0 AND null_count == row_count (100% missing) THEN UNSUPPORTED",
+        "reason": "Column 'REASON' contains 100% missing values; clinical semantics unobservable.",
+        "confidence": 0.1,
+        "evidence_strength": "NONE"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (ENCOUNTER.REASON)",
+        "Deterministic Decision Engine (R0_UNPOPULATED_FIELD)"
+      ],
+      "timestamp": "2026-09-27T04:02:38.455622"
+    },
+    {
+      "legacy_field": "MEDICATION.MEDICATION_ID",
+      "table_name": "MEDICATION",
+      "column_name": "MEDICATION_ID",
+      "semantic_meaning": "Unique identifier for a medication",
+      "observed_facts": [
+        "Observed type 'TEXT'",
+        "100% unique non-null values",
+        "21625 distinct values across 21625 non-null rows",
+        "Samples resemble UUIDs (universally unique identifiers)"
+      ],
+      "inferred_facts": [
+        "The field likely serves as a primary identifier for medication entities",
+        "The values are likely generated programmatically due to their UUID-like format"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'MedicationRequest.identifier' (Identifier, Cardinality: 0..*). Description: External ids for this request"
+      ],
+      "fhir_candidate": {
+        "target_resource": "MedicationRequest",
+        "target_path": "MedicationRequest.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "extensible",
+        "binding_valueset": "null",
+        "rationale": "The legacy field MEDICATION.MEDICATION_ID represents a unique identifier for a medication, which aligns with the semantic meaning of MedicationRequest.identifier in FHIR R4. The high semantic confidence of 0.95 and the profiling facts indicating 100% unique non-null values support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.96,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'MedicationRequest.identifier'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.96 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.96) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.96,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (MedicationRequest.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:03:03.192375"
+    },
+    {
+      "legacy_field": "MEDICATION.PATIENT_ID",
+      "table_name": "MEDICATION",
+      "column_name": "PATIENT_ID",
+      "semantic_meaning": "Foreign key referencing a patient's identifier",
+      "observed_facts": [
+        "MEDICATION.PATIENT_ID has 347 distinct values across 21625 non-null rows",
+        "Values in MEDICATION.PATIENT_ID are fully contained in DIAGNOSIS.PATIENT_ID, ENCOUNTER.PATIENT_ID, and PATIENT_MASTER.PATIENT_ID",
+        "Sample values are in the format of UUIDs (e.g., '8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc')",
+        "FHIR R4 element 'Patient.identifier' matches the observed data type and purpose"
+      ],
+      "inferred_facts": [
+        "MEDICATION.PATIENT_ID is likely a foreign key referencing the patient's identifier in the PATIENT_MASTER table",
+        "The relationship between MEDICATION.PATIENT_ID and other tables (DIAGNOSIS, ENCOUNTER) is consistent with a foreign-key patient reference"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.hospitalization.dietPreference' (CodeableConcept, 0..*): Diet preferences reported by the patient",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient",
+        "FHIR R4 element 'Patient.active' (boolean, 0..1): Whether this patient's record is in active use"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "required",
+        "binding_valueset": "null",
+        "rationale": "The legacy field MEDICATION.PATIENT_ID is a foreign key referencing a patient's identifier, which directly maps to the FHIR R4 element Patient.identifier. The semantic meaning and terminology interpretation also support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 1.0,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 1.00 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.identifier'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:04:10.086680"
+    },
+    {
+      "legacy_field": "MEDICATION.RXNORM_CODE",
+      "table_name": "MEDICATION",
+      "column_name": "RXNORM_CODE",
+      "semantic_meaning": "RxNorm medication code",
+      "observed_facts": [
+        "Observed type 'TEXT'",
+        "140 distinct values across 12804 non-null rows",
+        "40.8% null values",
+        "Samples match RxNorm concept RxCUIs"
+      ],
+      "inferred_facts": [
+        "MEDICATION.RXNORM_CODE represents a standardized medication identifier",
+        "Values in MEDICATION.RXNORM_CODE are likely used for medication ordering or documentation"
+      ],
+      "retrieved_evidence_summary": [
+        "Official NLM RxNorm concept RxCUI 309362: 'clopidogrel 75 MG Oral Tablet' (Term Type: SCD)",
+        "Official NLM RxNorm concept RxCUI 312961: 'simvastatin 20 MG Oral Tablet' (Term Type: SCD)",
+        "Official NLM RxNorm concept RxCUI 866412: '24 HR metoprolol succinate 100 MG Extended Release Oral Tablet' (Term Type: SCD)",
+        "Official NLM RxNorm concept RxCUI 705129: 'nitroglycerin 0.4 MG/ACTUAT Mucosal Spray' (Term Type: SCD)"
+      ],
+      "fhir_candidate": {
+        "target_resource": "MedicationRequest",
+        "target_path": "MedicationRequest.medicationCodeableConcept",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "1..1",
+        "binding_strength": "required",
+        "binding_valueset": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "rationale": "The RxNorm medication code is a verified code that corresponds to the MedicationRequest.medicationCodeableConcept element, which is used to represent the medication being ordered. The high semantic confidence (0.99) and the fact that the samples are valid RxNorm codes support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.99,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 1.0,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 1.0,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.99 based on profiling facts.",
+          "terminology": "Strong exact terminology corroboration (5 exact matches).",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'MedicationRequest.medicationCodeableConcept'.",
+          "retrieval": "Retrieval coverage: 6 total evidence items retrieved.",
+          "summary": "Mapping confidence 1.00 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (1.00) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 1.0,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (RxNorm, FHIR_R4, OHDSI)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (MedicationRequest.medicationCodeableConcept)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:04:50.144453"
+    },
+    {
+      "legacy_field": "MEDICATION.MEDICATION_NAME",
+      "table_name": "MEDICATION",
+      "column_name": "MEDICATION_NAME",
+      "semantic_meaning": "Medication Name",
+      "observed_facts": [
+        "Observed type 'TEXT'",
+        "145 distinct values across 12804 non-null rows",
+        "40.8% null values",
+        "Samples include medication names with dosage and formulation information"
+      ],
+      "inferred_facts": [
+        "Medication names appear to follow a structured format, including medication name, dosage, and formulation",
+        "FHIR R4 element 'MedicationRequest.medication[x]' is a likely match for this field"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'MedicationRequest' (Element, 0..*): Ordering of medication for patient or group",
+        "FHIR R4 element 'MedicationRequest.category' (CodeableConcept, 0..*): Type of medication usage",
+        "FHIR R4 element 'MedicationRequest.medication[x]' (CodeableConcept, 1..1): Medication to be taken"
+      ],
+      "fhir_candidate": {
+        "target_resource": "MedicationRequest",
+        "target_path": "MedicationRequest.medicationCodeableConcept",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "1..1",
+        "binding_strength": "example",
+        "binding_valueset": "null",
+        "rationale": "The legacy field MEDICATION.MEDICATION_NAME represents the name of the medication, which aligns with the MedicationRequest.medicationCodeableConcept element in FHIR R4. Although the terminology interpretation is uncoded, the samples provided suggest a text-based representation of medication names, which can be mapped to a CodeableConcept.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "MedicationRequest.medicationReference"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.91,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'MedicationRequest.medicationCodeableConcept' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.91 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.91) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.91,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (MedicationRequest.medicationCodeableConcept)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:05:54.050348"
+    },
+    {
+      "legacy_field": "MEDICATION.STATUS",
+      "table_name": "MEDICATION",
+      "column_name": "STATUS",
+      "semantic_meaning": "Medication status code",
+      "observed_facts": [
+        "Observed type 'TEXT'",
+        "2 distinct values across 21625 non-null rows",
+        "Samples: ['completed', 'active']"
+      ],
+      "inferred_facts": [
+        "FHIR R4 element 'MedicationRequest.status' matches the observed values",
+        "The field likely represents the current status of a medication order"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'MedicationRequest.statusReason' (CodeableConcept, 0..1): Reason for current status",
+        "FHIR R4 element 'MedicationRequest.status' (code, 1..1): active | on-hold | cancelled | completed | entered-in-error | stopped | draft | unknown",
+        "FHIR R4 element 'Patient.maritalStatus' (CodeableConcept, 0..1): Marital (civil) status of a patient"
+      ],
+      "fhir_candidate": {
+        "target_resource": "MedicationRequest",
+        "target_path": "MedicationRequest.status",
+        "target_element_type": "code",
+        "cardinality": "1..1",
+        "binding_strength": "required",
+        "binding_valueset": "http://hl7.org/fhir/ValueSet-medicationrequest-status",
+        "rationale": "The legacy field MEDICATION.STATUS represents the status of a medication order, which aligns with the MedicationRequest.status element in FHIR R4. The samples provided ('completed', 'active') match the values defined in the MedicationRequest.status value set.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "MedicationRequest.statusReason"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.96,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'MedicationRequest.status'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.96 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.96) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.96,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (MedicationRequest.status)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:06:15.664833"
+    },
+    {
+      "legacy_field": "MEDICATION.PRESCRIBED_DATE",
+      "table_name": "MEDICATION",
+      "column_name": "PRESCRIBED_DATE",
+      "semantic_meaning": "Date and time when a medication was prescribed",
+      "observed_facts": [
+        "Observed type 'TEXT' with 12904 distinct values across 21625 non-null rows",
+        "Sample values match the format of a timestamp datetime (e.g., '2018-06-19T22:43:32+05:30')",
+        "Moderate value overlap (68.6% and 60.2%) with VITAL_SIGNS.MEASUREMENT_DATE and ENCOUNTER.START_DATE indicates shared domain or concept pool"
+      ],
+      "inferred_facts": [
+        "The field is likely representing a datetime value due to the presence of date and time components in the sample values",
+        "The overlap with VITAL_SIGNS.MEASUREMENT_DATE and ENCOUNTER.START_DATE suggests a relationship between medication prescription and other clinical events"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.birthDate' (date, 0..1): The date of birth for the individual",
+        "FHIR R4 element 'Condition.recordedDate' (dateTime, 0..1): Date record was first recorded",
+        "FHIR R4 element 'MedicationRequest' (Element, 0..*): Ordering of medication for patient or group"
+      ],
+      "fhir_candidate": {
+        "target_resource": "MedicationRequest",
+        "target_path": "MedicationRequest.authoredOn",
+        "target_element_type": "dateTime",
+        "cardinality": "0..1",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The prescribed date of a medication corresponds to the date and time the medication order was authored, which is represented by the 'authoredOn' element in the MedicationRequest resource.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "MedicationRequest.dispenseRequest.validityPeriod.start"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.98,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.92,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.98 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'MedicationRequest.authoredOn' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.92 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.92) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.92,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (MedicationRequest.authoredOn)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:07:28.188020"
+    },
+    {
+      "legacy_field": "PATIENT_MASTER.PATIENT_ID",
+      "table_name": "PATIENT_MASTER",
+      "column_name": "PATIENT_ID",
+      "semantic_meaning": "Unique patient identifier",
+      "observed_facts": [
+        "100% unique non-null values across 354 rows",
+        "Observed type 'TEXT' with UUID-like format",
+        "Full containment of values in related tables (DIAGNOSIS, ENCOUNTER)"
+      ],
+      "inferred_facts": [
+        "PATIENT_ID serves as a primary identifier for patients",
+        "Values are consistent with a foreign-key patient reference"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'Patient.identifier' (Identifier, Cardinality: 0..*). Description: An identifier for this patient"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "required",
+        "binding_valueset": "null",
+        "rationale": "The legacy field PATIENT_MASTER.PATIENT_ID represents a unique patient identifier, which directly maps to the official FHIR R4 element Patient.identifier, used for identifying patients.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 1.0,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 1.00 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.identifier'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:08:05.874350"
+    },
+    {
+      "legacy_field": "PATIENT_MASTER.DATE_OF_BIRTH",
+      "table_name": "PATIENT_MASTER",
+      "column_name": "DATE_OF_BIRTH",
+      "semantic_meaning": "Patient's date of birth",
+      "observed_facts": [
+        "Observed type 'TEXT' with date-like values",
+        "296 distinct values across 354 non-null rows",
+        "Samples resemble date formats (e.g., '1944-01-18', '2003-02-03')"
+      ],
+      "inferred_facts": [
+        "The field likely represents a date of birth due to the format and range of values",
+        "FHIR R4 element 'Patient.birthDate' provides a standard representation for this concept"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.birthDate' (date, 0..1): The date of birth for the individual",
+        "FHIR R4 element 'Patient.multipleBirth[x]' (boolean, 0..1): Whether patient is part of a multiple birth",
+        "FHIR R4 element 'Patient.maritalStatus' (CodeableConcept, 0..1): Marital (civil) status of a patient"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.birthDate",
+        "target_element_type": "date",
+        "cardinality": "0..1",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field 'DATE_OF_BIRTH' directly corresponds to the FHIR R4 element 'Patient.birthDate', which represents the date of birth for the individual.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 1.0,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 1.00 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.birthDate'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.birthDate)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:09:17.296185"
+    },
+    {
+      "legacy_field": "PATIENT_MASTER.GENDER",
+      "table_name": "PATIENT_MASTER",
+      "column_name": "GENDER",
+      "semantic_meaning": "Patient's gender",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "2 distinct values: 'male' and 'female'",
+        "0.0% null values across 354 non-null rows"
+      ],
+      "inferred_facts": [
+        "Values align with FHIR R4 Patient.gender element options",
+        "FHIR R4 structure suggests a coded element, but values are not explicitly coded"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.gender' (code, 0..1): male | female | other | unknown",
+        "FHIR R4 element 'Patient.contact.gender' (code, 0..1): male | female | other | unknown",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.gender",
+        "target_element_type": "code",
+        "cardinality": "0..1",
+        "binding_strength": "required",
+        "binding_valueset": "http://hl7.org/fhir/ValueSet/administrative-gender",
+        "rationale": "The legacy field PATIENT_MASTER.GENDER represents the patient's gender, which aligns with the FHIR R4 element Patient.gender. The observed values 'male' and 'female' match the values in the administrative-gender valueset.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Patient.contact.gender"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.96,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.gender'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.96 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.96) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.96,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.gender)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:10:20.260601"
+    },
+    {
+      "legacy_field": "PATIENT_MASTER.LAST_NAME",
+      "table_name": "PATIENT_MASTER",
+      "column_name": "LAST_NAME",
+      "semantic_meaning": "Patient's last name",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "265 distinct values across 354 non-null rows",
+        "0.0% null values"
+      ],
+      "inferred_facts": [
+        "The field likely represents a part of the patient's name",
+        "FHIR R4 element 'Patient.name' is a possible match"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.name' (HumanName, 0..*): A name associated with the patient",
+        "FHIR R4 element 'Patient.contact.name' (HumanName, 0..1): A name associated with the contact person",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.name",
+        "target_element_type": "HumanName",
+        "cardinality": "0..*",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field 'LAST_NAME' represents a part of the patient's name, which is best captured by the 'Patient.name' element in FHIR R4. The 'Patient.name' element is of type HumanName, which includes family (last) name, making it the most suitable choice.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Patient.contact.name"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.99,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.99 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.name'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.name)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:11:16.814007"
+    },
+    {
+      "legacy_field": "PATIENT_MASTER.FIRST_NAME",
+      "table_name": "PATIENT_MASTER",
+      "column_name": "FIRST_NAME",
+      "semantic_meaning": "Patient's given name",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "100% unique non-null values across 354 rows",
+        "Samples contain multiple names separated by spaces"
+      ],
+      "inferred_facts": [
+        "The field likely contains full names or multiple names",
+        "FHIR R4 'Patient.name' element is a close match for this field"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.name' (HumanName, 0..*): A name associated with the patient",
+        "FHIR R4 element 'Patient.contact.name' (HumanName, 0..1): A name associated with the contact person",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.name",
+        "target_element_type": "HumanName",
+        "cardinality": "0..*",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field PATIENT_MASTER.FIRST_NAME represents the patient's given name, which aligns with the FHIR R4 element Patient.name, used for a name associated with the patient. The high semantic confidence of 0.90 and the fact that Patient.name is the most direct match for a patient's given name support this choice.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Patient.contact.name"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.9,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.95,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.90 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.name'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.95 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.95) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.95,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.name)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:12:17.051827"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.OBSERVATION_ID",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "OBSERVATION_ID",
+      "semantic_meaning": "Unique identifier for a vital sign observation",
+      "observed_facts": [
+        "Observed type is 'TEXT'",
+        "100% unique non-null values across 49902 rows",
+        "0.0% null values",
+        "Samples resemble UUIDs (universally unique identifiers)"
+      ],
+      "inferred_facts": [
+        "The field likely serves as a primary identifier for vital sign observations",
+        "The values are likely generated to ensure uniqueness"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'Observation.identifier' (Identifier, Cardinality: 0..*). Description: Business Identifier for observation"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Observation",
+        "target_path": "Observation.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "preferred",
+        "binding_valueset": "null",
+        "rationale": "The VITAL_SIGNS.OBSERVATION_ID field represents a unique identifier for a vital sign observation, which aligns with the definition of the Observation.identifier element in FHIR R4. The high semantic confidence (0.99) and the fact that the values are unique and have a high degree of distinctness support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.99,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.99 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Observation.identifier'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Observation.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:12:50.395698"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.PATIENT_ID",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "PATIENT_ID",
+      "semantic_meaning": "Patient Identifier",
+      "observed_facts": [
+        "Observed type 'TEXT' with 354 distinct values",
+        "0.0% null values across 49902 non-null rows",
+        "Samples of values resemble UUIDs",
+        "Full containment overlap with DIAGNOSIS.PATIENT_ID, ENCOUNTER.PATIENT_ID, and PATIENT_MASTER.PATIENT_ID"
+      ],
+      "inferred_facts": [
+        "The field likely represents a foreign key referencing patient identifiers",
+        "The values are consistent with FHIR R4 Patient.identifier (Identifier, 0..*)"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Encounter.hospitalization.dietPreference' (CodeableConcept, 0..*): Diet preferences reported by the patient",
+        "FHIR R4 element 'Patient.identifier' (Identifier, 0..*): An identifier for this patient",
+        "FHIR R4 element 'Patient.active' (boolean, 0..1): Whether this patient's record is in active use"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Patient",
+        "target_path": "Patient.identifier",
+        "target_element_type": "Identifier",
+        "cardinality": "0..*",
+        "binding_strength": "required",
+        "binding_valueset": "null",
+        "rationale": "The legacy field VITAL_SIGNS.PATIENT_ID represents a patient identifier, which directly maps to the FHIR R4 element Patient.identifier. The semantic meaning and terminology interpretation also support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 1.0,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.98,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 1.00 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Patient.identifier'.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.98 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.98) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.98,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Patient.identifier)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:13:36.714459"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.LOINC_CODE",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "LOINC_CODE",
+      "semantic_meaning": "LOINC code for vital sign observations",
+      "observed_facts": [
+        "Field type is TEXT",
+        "20 distinct LOINC codes across 49902 non-null rows",
+        "Sample values include known LOINC codes (e.g., 8302-2, 72514-3, 29463-7)"
+      ],
+      "inferred_facts": [
+        "LOINC codes represent standardized vital sign measurements",
+        "Field values are likely used for indexing or referencing specific vital sign observations"
+      ],
+      "retrieved_evidence_summary": [
+        "Official LOINC concept 8302-2: 'Body height'. Component: Body height, System: ^Patient, Class: BDYHGT.ATOM, Recommended UCUM units: '[in_us];cm;m'",
+        "Official LOINC concept 72514-3: 'Pain severity - 0-10 verbal numeric rating [Score] - Reported'. Component: Pain severity - 0-10 verbal numeric rating, System: ^Patient, Class: H&P.HX, Recommended UCUM units: '{score}'",
+        "Official LOINC concept 29463-7: 'Body weight'. Component: Body weight, System: ^Patient, Class: BDYWGT.ATOM, Recommended UCUM units: '[lb_av];kg'",
+        "Official LOINC concept 39156-5: 'Body mass index (BMI) [Ratio]'. Component: Body mass index, System: ^Patient, Class: BDYWGT.ATOM, Recommended UCUM units: 'kg/m2'"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Observation",
+        "target_path": "Observation.code",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "1..1",
+        "binding_strength": "example",
+        "binding_valueset": "http://loinc.org",
+        "rationale": "The LOINC code for vital sign observations directly maps to the Observation.code element in FHIR, which represents the type of observation. The high semantic confidence and the fact that the values are verified LOINC codes support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.99,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 1.0,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 1.0,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.99 based on profiling facts.",
+          "terminology": "Strong exact terminology corroboration (5 exact matches).",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Observation.code'.",
+          "retrieval": "Retrieval coverage: 6 total evidence items retrieved.",
+          "summary": "Mapping confidence 1.00 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (1.00) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 1.0,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (LOINC, FHIR_R4, OHDSI)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Observation.code)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:14:27.715840"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.MEASUREMENT_NAME",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "MEASUREMENT_NAME",
+      "semantic_meaning": "Type of vital sign measurement",
+      "observed_facts": [
+        "Text type with 21 distinct values",
+        "0.0% null rate across 49902 non-null rows",
+        "Sample values include 'Body Height', 'Pain severity - 0-10 verbal numeric rating [Score] - Reported', and 'Body Weight'"
+      ],
+      "inferred_facts": [
+        "Measurement names are standardized and correspond to LOINC codes",
+        "FHIR R4 Observation.code element is relevant for vital sign measurements"
+      ],
+      "retrieved_evidence_summary": [
+        "Official FHIR R4 element 'Observation.code' (CodeableConcept, Cardinality: 1..1). Description: Type of observation (code / type) [Binding: example]"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Observation",
+        "target_path": "Observation.code",
+        "target_element_type": "CodeableConcept",
+        "cardinality": "1..1",
+        "binding_strength": "example",
+        "binding_valueset": "http://loinc.org",
+        "rationale": "The legacy field VITAL_SIGNS.MEASUREMENT_NAME represents the type of vital sign measurement, which aligns with the semantic meaning of Observation.code in FHIR R4. The terminology interpretation indicates a verified LOINC concept display, further supporting this mapping. The profiling facts show a high semantic confidence and a variety of distinct values, which is consistent with the use of Observation.code for different types of observations.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.96,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Observation.code'.",
+          "retrieval": "Retrieval coverage: 1 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.96 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.96) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.96,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (LOINC, FHIR_R4, OHDSI)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Observation.code)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:15:57.411975"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.MEASUREMENT_VALUE",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "MEASUREMENT_VALUE",
+      "semantic_meaning": "Quantitative measurement value of a vital sign",
+      "observed_facts": [
+        "Field type is REAL",
+        "10.9% null values",
+        "8944 distinct values across 44463 non-null rows",
+        "Sample values include decimal numbers (e.g., 191.4, 30.33)"
+      ],
+      "inferred_facts": [
+        "Measurement values are likely to represent various vital sign quantities (e.g., blood pressure, heart rate, temperature)",
+        "FHIR R4 element 'Observation.value[x]' and 'Observation.component.value[x]' provide a structural framework for representing measurement values"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Observation.value[x]' (Quantity, 0..1): Actual result",
+        "FHIR R4 element 'Observation.component.value[x]' (Quantity, 0..1): Actual component result",
+        "FHIR R4 element 'Observation' (Element, 0..*): Measurements and simple assertions"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Observation",
+        "target_path": "Observation.valueQuantity.value",
+        "target_element_type": "Quantity",
+        "cardinality": "0..1",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field VITAL_SIGNS.MEASUREMENT_VALUE represents a quantitative measurement value of a vital sign, which aligns with the FHIR R4 Observation.valueQuantity element. The high semantic confidence (0.95) and profiling facts (e.g., observed type 'REAL', 8944 distinct values) support this mapping.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Observation.component.valueQuantity.value"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.95,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.4,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.81,
+        "evidence_strength": "MODERATE",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.95 based on profiling facts.",
+          "terminology": "No direct or exact terminology matches found.",
+          "fhir": "Canonical FHIR element candidate 'Observation.valueQuantity.value' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.81 with MODERATE evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R2_MODERATE_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.75 AND evidence_strength IN ('STRONG', 'MODERATE') THEN ACCEPTED",
+        "reason": "Sufficient mapping confidence (0.81) backed by MODERATE evidence strength.",
+        "confidence": 0.81,
+        "evidence_strength": "MODERATE"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Observation.valueQuantity.value)",
+        "Deterministic Decision Engine (R2_MODERATE_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:17:03.087769"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.MEASUREMENT_UNIT",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "MEASUREMENT_UNIT",
+      "semantic_meaning": "Unit of measurement for vital signs",
+      "observed_facts": [
+        "Field type is TEXT",
+        "9 distinct values across 44463 non-null rows",
+        "10.9% null values",
+        "Sample values include 'cm', '{score}', 'kg', 'kg/m2', '/min'"
+      ],
+      "inferred_facts": [
+        "Field represents a variety of physical measurement units",
+        "Units are consistent with UCUM standard clinical units"
+      ],
+      "retrieved_evidence_summary": [
+        "Standard clinical UCUM unit 'cm': Centimeter (Length)",
+        "Standard clinical UCUM unit '{score}': Arbitrary clinical score unit",
+        "Standard clinical UCUM unit 'kg': Kilogram (Mass)",
+        "Standard clinical UCUM unit '/min': Per minute (Frequency)"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Observation",
+        "target_path": "Observation.valueQuantity.unit",
+        "target_element_type": "string",
+        "cardinality": "0..1",
+        "binding_strength": "required",
+        "binding_valueset": "http://unitsofmeasure.org",
+        "rationale": "The legacy field VITAL_SIGNS.MEASUREMENT_UNIT represents the unit of measurement for vital signs, which aligns with the semantic meaning of Observation.valueQuantity.unit in FHIR R4. The terminology interpretation of verified UCUM units also matches the expected use of UCUM units in FHIR.",
+        "is_direct": true,
+        "alternative_candidates": []
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.98,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 1.0,
+        "fhir_evidence_score": 1.0,
+        "mapping_confidence": 0.99,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.98 based on profiling facts.",
+          "terminology": "Strong exact terminology corroboration (4 exact matches).",
+          "fhir": "Exact match with official FHIR StructureDefinition element 'Observation.valueQuantity.unit'.",
+          "retrieval": "Retrieval coverage: 5 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.99 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.99) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.99,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (UCUM, FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Observation.valueQuantity.unit)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:18:04.030909"
+    },
+    {
+      "legacy_field": "VITAL_SIGNS.MEASUREMENT_DATE",
+      "table_name": "VITAL_SIGNS",
+      "column_name": "MEASUREMENT_DATE",
+      "semantic_meaning": "Date and time of vital sign measurement",
+      "observed_facts": [
+        "Observed type 'TEXT' with 11336 distinct values",
+        "Samples indicate ISO 8601 datetime format",
+        "Moderate value overlap with MEDICATION.PRESCRIBED_DATE and ENCOUNTER.START_DATE"
+      ],
+      "inferred_facts": [
+        "MEASUREMENT_DATE likely represents a timestamp for vital sign measurements",
+        "FHIR R4 structure suggests a primitive dateTime element for such measurements"
+      ],
+      "retrieved_evidence_summary": [
+        "FHIR R4 element 'Patient.birthDate' (date, 0..1): The date of birth for the individual",
+        "FHIR R4 element 'Condition.recordedDate' (dateTime, 0..1): Date record was first recorded",
+        "FHIR R4 element 'Observation' (Element, 0..*): Measurements and simple assertions"
+      ],
+      "fhir_candidate": {
+        "target_resource": "Observation",
+        "target_path": "Observation.effectiveDateTime",
+        "target_element_type": "dateTime",
+        "cardinality": "0..1",
+        "binding_strength": "null",
+        "binding_valueset": "null",
+        "rationale": "The legacy field VITAL_SIGNS.MEASUREMENT_DATE represents the date and time of vital sign measurement, which aligns with the semantic meaning of Observation.effectiveDateTime in FHIR R4. This element is used to record the time at which the observation was made, which is a direct match for the given clinical concept of Vital Sign Quantitative Measurement.",
+        "is_direct": true,
+        "alternative_candidates": [
+          "Observation.issued"
+        ]
+      },
+      "confidence_breakdown": {
+        "semantic_confidence": 0.98,
+        "retrieval_quality": 1.0,
+        "terminology_evidence_score": 0.9,
+        "fhir_evidence_score": 0.85,
+        "mapping_confidence": 0.92,
+        "evidence_strength": "STRONG",
+        "components_explanation": {
+          "semantic": "Semantic Agent confidence: 0.98 based on profiling facts.",
+          "terminology": "Field is identifier/datetime/primitive; clinical vocabulary lookup not required.",
+          "fhir": "Canonical FHIR element candidate 'Observation.effectiveDateTime' corroborated.",
+          "retrieval": "Retrieval coverage: 3 total evidence items retrieved.",
+          "summary": "Mapping confidence 0.92 with STRONG evidence strength."
+        }
+      },
+      "decision": {
+        "decision": "ACCEPTED",
+        "rule_id": "R1_STRONG_ACCEPTED",
+        "rule_description": "IF mapping_confidence >= 0.80 AND evidence_strength == 'STRONG' THEN ACCEPTED",
+        "reason": "High mapping confidence (0.92) corroborated by strong terminology and FHIR structural evidence.",
+        "confidence": 0.92,
+        "evidence_strength": "STRONG"
+      },
+      "provenance": [
+        "Database Checksum: 380fbfc747c2...",
+        "Deterministic Schema Profiler",
+        "Schema Intelligence (openrouter)",
+        "Hybrid Retrieval (FHIR_R4)",
+        "Semantic Agent (meta-llama/llama-3.3-70b-instruct)",
+        "FHIR Mapping Agent (Observation.effectiveDateTime)",
+        "Deterministic Decision Engine (R1_STRONG_ACCEPTED)"
+      ],
+      "timestamp": "2026-09-27T04:18:33.113425"
+    }
+  ],
+  "knowledge_sources_manifest": {
+    "FHIR_R4": {
+      "name": "FHIR R4",
+      "version": "4.0.1",
+      "source_url": "https://hl7.org/fhir/R4/",
+      "resource_type": "OFFLINE_RELEASE + VECTOR_INDEX",
+      "availability": "AVAILABLE",
+      "credentials_required": false,
+      "credentials_present": true,
+      "local_path": "C:\\Users\\Administrator\\VISHNU PROJECT NEW\\resources\\raw\\fhir_r4\\hl7.fhir.r4.core.4.0.1.zip",
+      "checksum_sha256": "b090bf929e1f665cf2c91583720849695bc38d2892a7c5037c56cb00817fb091",
+      "record_count": 13433,
+      "last_checked": "2026-09-27T03:47:49.673332",
+      "details": "Offline core zip verified (4,531,911 bytes); 13,433 indexed vector embeddings"
+    },
+    "LOINC": {
+      "name": "LOINC",
+      "version": "2.83",
+      "source_url": "https://loinc.org / https://fhir.loinc.org",
+      "resource_type": "OFFLINE_RELEASE + VECTOR_INDEX",
+      "availability": "AVAILABLE",
+      "credentials_required": true,
+      "credentials_present": false,
+      "local_path": "C:\\Users\\Administrator\\VISHNU PROJECT NEW\\resources\\raw\\loinc\\Loinc_2.83.zip",
+      "checksum_sha256": "077a0718e87d8309ffe3a673f75b836a8e783dc36a646413ef97c71c12eab27e",
+      "record_count": 112405,
+      "last_checked": "2026-09-27T03:47:50.148033",
+      "details": "112,405 LOINC vector embeddings; Local release files found; Online FHIR endpoint requires LOINC_USERNAME/PASSWORD"
+    },
+    "UCUM": {
+      "name": "UCUM",
+      "version": "Revision 1.9",
+      "source_url": "https://unitsofmeasure.org/",
+      "resource_type": "OFFLINE_RELEASE",
+      "availability": "AVAILABLE",
+      "credentials_required": false,
+      "credentials_present": true,
+      "local_path": "C:\\Users\\Administrator\\VISHNU PROJECT NEW\\resources\\raw\\ucum\\ucum-essence.xml",
+      "checksum_sha256": "dfccea1b5dc284245ebae97edd1dc03c45864da4e87df55bc9851797b4fd0b61",
+      "record_count": null,
+      "last_checked": "2026-09-27T03:47:50.148033",
+      "details": "ucum-essence.xml verified (82,776 bytes)"
+    },
+    "RxNorm": {
+      "name": "RxNorm",
+      "version": "08-Sep-2026",
+      "source_url": "https://rxnav.nlm.nih.gov/REST/",
+      "resource_type": "OPEN_REST_API",
+      "availability": "AVAILABLE",
+      "credentials_required": false,
+      "credentials_present": true,
+      "local_path": null,
+      "checksum_sha256": null,
+      "record_count": null,
+      "last_checked": "2026-09-27T03:47:52.785034",
+      "details": "Connected to NLM RxNav (RxNorm API version 08-Sep-2026)"
+    },
+    "SNOMED_CT": {
+      "name": "SNOMED CT",
+      "version": "International / US Edition",
+      "source_url": "https://browser.ihtsdotools.org/",
+      "resource_type": "AUTH_REST_API",
+      "availability": "NOT CONFIGURED",
+      "credentials_required": true,
+      "credentials_present": false,
+      "local_path": null,
+      "checksum_sha256": null,
+      "record_count": null,
+      "last_checked": "2026-09-27T03:47:52.785034",
+      "details": "SNOMED CT requires authorized license; gracefully fallback to syntactic recognition and FHIR bindings."
+    },
+    "OHDSI": {
+      "name": "OHDSI",
+      "version": "OMOP Vocabulary v5.0",
+      "source_url": "https://athena.ohdsi.org/",
+      "resource_type": "OFFLINE_RELEASE + VECTOR_INDEX",
+      "availability": "AVAILABLE",
+      "credentials_required": false,
+      "credentials_present": true,
+      "local_path": "C:\\Users\\Administrator\\VISHNU PROJECT NEW\\resources\\raw\\ohdsi",
+      "checksum_sha256": null,
+      "record_count": 1036164,
+      "last_checked": "2026-09-27T03:47:55.663487",
+      "details": "1,036,164 pre-indexed OHDSI OMOP concept vectors"
+    }
+  }
+}
