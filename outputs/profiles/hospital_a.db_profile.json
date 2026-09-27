@@ -1,0 +1,1556 @@
+{
+  "database_path": "C:\\Users\\Administrator\\VISHNU PROJECT NEW\\data\\hospital_a.db",
+  "database_name": "hospital_a.db",
+  "checksum_sha256": "380fbfc747c2b43909ba3e9eb43c3881bb5cb7d5b094cb761c41ba839928ecd4",
+  "profiling_timestamp": "2026-09-25T18:29:48.564929",
+  "tables": {
+    "DIAGNOSIS": {
+      "table_name": "DIAGNOSIS",
+      "row_count": 13953,
+      "column_count": 6,
+      "columns": {
+        "DIAGNOSIS_ID": {
+          "table_name": "DIAGNOSIS",
+          "column_name": "DIAGNOSIS_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 13953,
+          "null_count": 0,
+          "non_null_count": 13953,
+          "null_percentage": 0.0,
+          "distinct_count": 13953,
+          "uniqueness_ratio": 1.0,
+          "is_unique": true,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-8167-81bc5f27c8d7",
+            "8d1edfd0-df60-b5c8-62bb-ba9380ff130f",
+            "8d1edfd0-df60-b5c8-14e2-61142b169ec3",
+            "8d1edfd0-df60-b5c8-bcf9-06b6ca7b576a",
+            "8d1edfd0-df60-b5c8-96f4-f21bfed8875a"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "fbfb3ed9-b7fa-6047-fa91-13011f52324e": 1,
+            "fbfb3ed9-b7fa-6047-f96b-4d2160348ad5": 1,
+            "fbfb3ed9-b7fa-6047-f419-6efc45c84d68": 1,
+            "fbfb3ed9-b7fa-6047-e989-ccab5915592f": 1,
+            "fbfb3ed9-b7fa-6047-e3c1-046fa7e0f94f": 1
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 13953 distinct values across 13953 non-null rows (0.0% null); 100% unique non-null values (candidate identifier); Samples: ['8d1edfd0-df60-b5c8-8167-81bc5f27c8d7', '8d1edfd0-df60-b5c8-62bb-ba9380ff130f', '8d1edfd0-df60-b5c8-14e2-61142b169ec3']"
+        },
+        "PATIENT_ID": {
+          "table_name": "DIAGNOSIS",
+          "column_name": "PATIENT_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 13953,
+          "null_count": 0,
+          "non_null_count": 13953,
+          "null_percentage": 0.0,
+          "distinct_count": 354,
+          "uniqueness_ratio": 0.0254,
+          "is_unique": false,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc",
+            "e10377b0-54f0-cc84-20dd-4ff3854e371c",
+            "1e961744-0913-72cf-6d66-fc33550d7e01",
+            "da719549-9231-1ab3-0d3c-ddc98c067e64",
+            "3592306e-d369-1e3b-f83a-c85012531d1d"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "0d55ede6-b128-4ac3-279c-edddd8fb90e5": 317,
+            "1714ae43-65c7-1bfa-3747-463780899c61": 301,
+            "3aa37c4e-cba4-3cbd-bda4-f4dedf072c1d": 298,
+            "e9705c8b-079b-59c9-b7c1-21cd2ce64163": 270,
+            "3a051b85-bb46-77d9-0437-68a555dcd54a": 237
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 354 distinct values across 13953 non-null rows (0.0% null); Samples: ['8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc', 'e10377b0-54f0-cc84-20dd-4ff3854e371c', '1e961744-0913-72cf-6d66-fc33550d7e01']"
+        },
+        "SNOMED_CODE": {
+          "table_name": "DIAGNOSIS",
+          "column_name": "SNOMED_CODE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 13953,
+          "null_count": 0,
+          "non_null_count": 13953,
+          "null_percentage": 0.0,
+          "distinct_count": 236,
+          "uniqueness_ratio": 0.0169,
+          "is_unique": false,
+          "sample_values": [
+            "224299000",
+            "162864005",
+            "239873007",
+            "423315002",
+            "73595000"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "314529007": 2818,
+            "73595000": 1084,
+            "66383009": 1055,
+            "160903007": 1034,
+            "160904001": 690
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 236 distinct values across 13953 non-null rows (0.0% null); Samples: ['224299000', '162864005', '239873007']"
+        },
+        "DIAGNOSIS_NAME": {
+          "table_name": "DIAGNOSIS",
+          "column_name": "DIAGNOSIS_NAME",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 13953,
+          "null_count": 0,
+          "non_null_count": 13953,
+          "null_percentage": 0.0,
+          "distinct_count": 236,
+          "uniqueness_ratio": 0.0169,
+          "is_unique": false,
+          "sample_values": [
+            "Received higher education (finding)",
+            "Body mass index 30+ - obesity (finding)",
+            "Osteoarthritis of knee (disorder)",
+            "Limited social contact (finding)",
+            "Stress (finding)"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "Medication review due (situation)": 2818,
+            "Stress (finding)": 1084,
+            "Gingivitis (disorder)": 1055,
+            "Full-time employment (finding)": 1034,
+            "Part-time employment (finding)": 690
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 236 distinct values across 13953 non-null rows (0.0% null); Samples: ['Received higher education (finding)', 'Body mass index 30+ - obesity (finding)', 'Osteoarthritis of knee (disorder)']"
+        },
+        "ONSET_DATE": {
+          "table_name": "DIAGNOSIS",
+          "column_name": "ONSET_DATE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 13953,
+          "null_count": 0,
+          "non_null_count": 13953,
+          "null_percentage": 0.0,
+          "distinct_count": 11431,
+          "uniqueness_ratio": 0.8193,
+          "is_unique": false,
+          "sample_values": [
+            "1962-03-13T21:02:15+05:30",
+            "1984-01-24T20:20:49+05:30",
+            "1985-04-21T20:20:49+05:30",
+            "2000-02-22T21:09:04+05:30",
+            "2015-05-19T20:54:57+05:30"
+          ],
+          "numeric_stats": null,
+          "date_stats": {
+            "min_date": "1962-03-13T21:02:15+05:30",
+            "max_date": "2015-05-19T20:54:57+05:30",
+            "likely_format": "ISO8601"
+          },
+          "top_frequent_values": {
+            "2020-11-15T06:01:27+05:30": 9,
+            "2020-07-28T06:11:02+05:30": 9,
+            "1962-03-21T07:23:51+05:30": 9,
+            "2021-07-27T13:47:01+05:30": 6,
+            "2021-06-01T16:49:24+05:30": 6
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 11431 distinct values across 13953 non-null rows (0.0% null); Samples: ['1962-03-13T21:02:15+05:30', '1984-01-24T20:20:49+05:30', '1985-04-21T20:20:49+05:30']"
+        },
+        "STATUS": {
+          "table_name": "DIAGNOSIS",
+          "column_name": "STATUS",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 13953,
+          "null_count": 0,
+          "non_null_count": 13953,
+          "null_percentage": 0.0,
+          "distinct_count": 2,
+          "uniqueness_ratio": 0.0001,
+          "is_unique": false,
+          "sample_values": [
+            "active",
+            "resolved"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "resolved": 10518,
+            "active": 3435
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 2 distinct values across 13953 non-null rows (0.0% null); Samples: ['active', 'resolved']"
+        }
+      },
+      "declared_primary_keys": [],
+      "declared_foreign_keys": [],
+      "candidate_primary_keys": [
+        "DIAGNOSIS_ID"
+      ]
+    },
+    "ENCOUNTER": {
+      "table_name": "ENCOUNTER",
+      "row_count": 22612,
+      "column_count": 6,
+      "columns": {
+        "ENCOUNTER_ID": {
+          "table_name": "ENCOUNTER",
+          "column_name": "ENCOUNTER_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 22612,
+          "null_count": 0,
+          "non_null_count": 22612,
+          "null_percentage": 0.0,
+          "distinct_count": 22612,
+          "uniqueness_ratio": 1.0,
+          "is_unique": true,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-5690-bf999dafd26d",
+            "8d1edfd0-df60-b5c8-768d-dadca31b796c",
+            "8d1edfd0-df60-b5c8-c693-156220fb8807",
+            "8d1edfd0-df60-b5c8-55ff-ed7a260e107b",
+            "8d1edfd0-df60-b5c8-44f4-48d2a58f8833"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "fbfb3ed9-b7fa-6047-fa52-286de1c8348d": 1,
+            "fbfb3ed9-b7fa-6047-d613-538cff8c5b8b": 1,
+            "fbfb3ed9-b7fa-6047-d253-74ad03cfcfe6": 1,
+            "fbfb3ed9-b7fa-6047-cb0d-30f6bc11e9df": 1,
+            "fbfb3ed9-b7fa-6047-c321-f266242b9e9d": 1
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 22612 distinct values across 22612 non-null rows (0.0% null); 100% unique non-null values (candidate identifier); Samples: ['8d1edfd0-df60-b5c8-5690-bf999dafd26d', '8d1edfd0-df60-b5c8-768d-dadca31b796c', '8d1edfd0-df60-b5c8-c693-156220fb8807']"
+        },
+        "PATIENT_ID": {
+          "table_name": "ENCOUNTER",
+          "column_name": "PATIENT_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 22612,
+          "null_count": 0,
+          "non_null_count": 22612,
+          "null_percentage": 0.0,
+          "distinct_count": 354,
+          "uniqueness_ratio": 0.0157,
+          "is_unique": false,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc",
+            "e10377b0-54f0-cc84-20dd-4ff3854e371c",
+            "1e961744-0913-72cf-6d66-fc33550d7e01",
+            "da719549-9231-1ab3-0d3c-ddc98c067e64",
+            "3592306e-d369-1e3b-f83a-c85012531d1d"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "f8884d3a-0bd6-158e-68f4-1a4dceda41fb": 796,
+            "17d6f0e0-7a5b-14d9-cdbe-691d459dfdaa": 620,
+            "48fb08fe-3c27-de69-d948-ee9dcc70312b": 606,
+            "6c839f2d-98af-d74d-cf88-1040258d53a9": 537,
+            "32c008f7-c49a-6584-d4de-16ca1a6ab8b7": 533
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 354 distinct values across 22612 non-null rows (0.0% null); Samples: ['8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc', 'e10377b0-54f0-cc84-20dd-4ff3854e371c', '1e961744-0913-72cf-6d66-fc33550d7e01']"
+        },
+        "START_DATE": {
+          "table_name": "ENCOUNTER",
+          "column_name": "START_DATE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 22612,
+          "null_count": 0,
+          "non_null_count": 22612,
+          "null_percentage": 0.0,
+          "distinct_count": 22107,
+          "uniqueness_ratio": 0.9777,
+          "is_unique": false,
+          "sample_values": [
+            "1962-03-13T20:20:49+05:30",
+            "1984-01-24T20:20:49+05:30",
+            "1985-04-21T20:20:49+05:30",
+            "2000-02-22T20:20:49+05:30",
+            "2015-05-19T20:20:49+05:30"
+          ],
+          "numeric_stats": null,
+          "date_stats": {
+            "min_date": "1962-03-13T20:20:49+05:30",
+            "max_date": "2015-05-19T20:20:49+05:30",
+            "likely_format": "ISO8601"
+          },
+          "top_frequent_values": {
+            "1945-11-24T11:34:01+05:30": 8,
+            "1941-06-21T11:26:22+05:30": 6,
+            "1966-04-03T03:37:32+05:30": 4,
+            "2021-04-21T08:45:23+05:30": 3,
+            "2018-01-06T11:26:22+05:30": 3
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 22107 distinct values across 22612 non-null rows (0.0% null); Samples: ['1962-03-13T20:20:49+05:30', '1984-01-24T20:20:49+05:30', '1985-04-21T20:20:49+05:30']"
+        },
+        "END_DATE": {
+          "table_name": "ENCOUNTER",
+          "column_name": "END_DATE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 22612,
+          "null_count": 0,
+          "non_null_count": 22612,
+          "null_percentage": 0.0,
+          "distinct_count": 22585,
+          "uniqueness_ratio": 0.9988,
+          "is_unique": false,
+          "sample_values": [
+            "1962-03-13T21:02:15+05:30",
+            "1984-01-24T21:10:25+05:30",
+            "1985-04-21T20:35:49+05:30",
+            "2000-02-22T21:09:04+05:30",
+            "2015-05-19T20:54:57+05:30"
+          ],
+          "numeric_stats": null,
+          "date_stats": {
+            "min_date": "1962-03-13T21:02:15+05:30",
+            "max_date": "2015-05-19T20:54:57+05:30",
+            "likely_format": "ISO8601"
+          },
+          "top_frequent_values": {
+            "2025-08-25T08:14:51+05:30": 2,
+            "2022-07-15T00:29:44+05:30": 2,
+            "2021-12-26T03:33:11+05:30": 2,
+            "2021-11-25T06:51:39+05:30": 2,
+            "2021-11-05T10:41:34+05:30": 2
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 22585 distinct values across 22612 non-null rows (0.0% null); Samples: ['1962-03-13T21:02:15+05:30', '1984-01-24T21:10:25+05:30', '1985-04-21T20:35:49+05:30']"
+        },
+        "ENCOUNTER_TYPE": {
+          "table_name": "ENCOUNTER",
+          "column_name": "ENCOUNTER_TYPE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 22612,
+          "null_count": 0,
+          "non_null_count": 22612,
+          "null_percentage": 0.0,
+          "distinct_count": 5,
+          "uniqueness_ratio": 0.0002,
+          "is_unique": false,
+          "sample_values": [
+            "AMB",
+            "IMP",
+            "EMER",
+            "VR",
+            "HH"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "AMB": 21113,
+            "EMER": 820,
+            "IMP": 424,
+            "HH": 219,
+            "VR": 36
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 5 distinct values across 22612 non-null rows (0.0% null); Samples: ['AMB', 'IMP', 'EMER']"
+        },
+        "REASON": {
+          "table_name": "ENCOUNTER",
+          "column_name": "REASON",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 22612,
+          "null_count": 22612,
+          "non_null_count": 0,
+          "null_percentage": 100.0,
+          "distinct_count": 0,
+          "uniqueness_ratio": 0.0,
+          "is_unique": false,
+          "sample_values": [],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {},
+          "observed_fact_summary": "Observed type 'TEXT'; 0 distinct values across 0 non-null rows (100.0% null)"
+        }
+      },
+      "declared_primary_keys": [],
+      "declared_foreign_keys": [],
+      "candidate_primary_keys": [
+        "ENCOUNTER_ID"
+      ]
+    },
+    "MEDICATION": {
+      "table_name": "MEDICATION",
+      "row_count": 21625,
+      "column_count": 6,
+      "columns": {
+        "MEDICATION_ID": {
+          "table_name": "MEDICATION",
+          "column_name": "MEDICATION_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 21625,
+          "null_count": 0,
+          "non_null_count": 21625,
+          "null_percentage": 0.0,
+          "distinct_count": 21625,
+          "uniqueness_ratio": 1.0,
+          "is_unique": true,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-2845-ed1b764ce994",
+            "8d1edfd0-df60-b5c8-06cb-f384a59f2394",
+            "8d1edfd0-df60-b5c8-ff7d-2c7d34db679c",
+            "8d1edfd0-df60-b5c8-4bfb-2d1bca574f5f",
+            "8d1edfd0-df60-b5c8-1188-4501c29621db"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "fbfb3ed9-b7fa-6047-fdc9-0c4502cc54d4": 1,
+            "fbfb3ed9-b7fa-6047-fb77-207404cca263": 1,
+            "fbfb3ed9-b7fa-6047-f945-c9e7dd9ded04": 1,
+            "fbfb3ed9-b7fa-6047-f714-f81ece1ec7d3": 1,
+            "fbfb3ed9-b7fa-6047-f385-e7ea25ae5e25": 1
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 21625 distinct values across 21625 non-null rows (0.0% null); 100% unique non-null values (candidate identifier); Samples: ['8d1edfd0-df60-b5c8-2845-ed1b764ce994', '8d1edfd0-df60-b5c8-06cb-f384a59f2394', '8d1edfd0-df60-b5c8-ff7d-2c7d34db679c']"
+        },
+        "PATIENT_ID": {
+          "table_name": "MEDICATION",
+          "column_name": "PATIENT_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 21625,
+          "null_count": 0,
+          "non_null_count": 21625,
+          "null_percentage": 0.0,
+          "distinct_count": 347,
+          "uniqueness_ratio": 0.016,
+          "is_unique": false,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc",
+            "e10377b0-54f0-cc84-20dd-4ff3854e371c",
+            "1e961744-0913-72cf-6d66-fc33550d7e01",
+            "da719549-9231-1ab3-0d3c-ddc98c067e64",
+            "3592306e-d369-1e3b-f83a-c85012531d1d"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "17d6f0e0-7a5b-14d9-cdbe-691d459dfdaa": 995,
+            "0d55ede6-b128-4ac3-279c-edddd8fb90e5": 896,
+            "3aa37c4e-cba4-3cbd-bda4-f4dedf072c1d": 804,
+            "f8884d3a-0bd6-158e-68f4-1a4dceda41fb": 719,
+            "3a051b85-bb46-77d9-0437-68a555dcd54a": 692
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 347 distinct values across 21625 non-null rows (0.0% null); Samples: ['8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc', 'e10377b0-54f0-cc84-20dd-4ff3854e371c', '1e961744-0913-72cf-6d66-fc33550d7e01']"
+        },
+        "RXNORM_CODE": {
+          "table_name": "MEDICATION",
+          "column_name": "RXNORM_CODE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 21625,
+          "null_count": 8821,
+          "non_null_count": 12804,
+          "null_percentage": 40.79,
+          "distinct_count": 140,
+          "uniqueness_ratio": 0.0109,
+          "is_unique": false,
+          "sample_values": [
+            "309362",
+            "312961",
+            "866412",
+            "705129",
+            "1049221"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "106892": 2359,
+            "314076": 1835,
+            "310798": 1283,
+            "308136": 984,
+            "860975": 742
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 140 distinct values across 12804 non-null rows (40.8% null); Samples: ['309362', '312961', '866412']"
+        },
+        "MEDICATION_NAME": {
+          "table_name": "MEDICATION",
+          "column_name": "MEDICATION_NAME",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 21625,
+          "null_count": 8821,
+          "non_null_count": 12804,
+          "null_percentage": 40.79,
+          "distinct_count": 145,
+          "uniqueness_ratio": 0.0113,
+          "is_unique": false,
+          "sample_values": [
+            "Clopidogrel 75 MG Oral Tablet",
+            "Simvastatin 20 MG Oral Tablet",
+            "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+            "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray",
+            "Acetaminophen 325 MG / oxyCODONE Hydrochloride 5 MG Oral Tablet"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]": 2359,
+            "lisinopril 10 MG Oral Tablet": 1835,
+            "Hydrochlorothiazide 25 MG Oral Tablet": 1283,
+            "amLODIPine 2.5 MG Oral Tablet": 984,
+            "24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet": 742
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 145 distinct values across 12804 non-null rows (40.8% null); Samples: ['Clopidogrel 75 MG Oral Tablet', 'Simvastatin 20 MG Oral Tablet', '24 HR metoprolol succinate 100 MG Extended Release Oral Tablet']"
+        },
+        "STATUS": {
+          "table_name": "MEDICATION",
+          "column_name": "STATUS",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 21625,
+          "null_count": 0,
+          "non_null_count": 21625,
+          "null_percentage": 0.0,
+          "distinct_count": 2,
+          "uniqueness_ratio": 0.0001,
+          "is_unique": false,
+          "sample_values": [
+            "completed",
+            "active"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "completed": 20622,
+            "active": 1003
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 2 distinct values across 21625 non-null rows (0.0% null); Samples: ['completed', 'active']"
+        },
+        "PRESCRIBED_DATE": {
+          "table_name": "MEDICATION",
+          "column_name": "PRESCRIBED_DATE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 21625,
+          "null_count": 0,
+          "non_null_count": 21625,
+          "null_percentage": 0.0,
+          "distinct_count": 12904,
+          "uniqueness_ratio": 0.5967,
+          "is_unique": false,
+          "sample_values": [
+            "2018-06-19T22:43:32+05:30",
+            "2020-06-23T20:20:49+05:30",
+            "2020-06-30T23:16:03+05:30",
+            "2020-07-16T19:31:27+05:30",
+            "2020-07-16T20:20:33+05:30"
+          ],
+          "numeric_stats": null,
+          "date_stats": {
+            "min_date": "2018-06-19T22:43:32+05:30",
+            "max_date": "2020-07-16T20:20:33+05:30",
+            "likely_format": "ISO8601"
+          },
+          "top_frequent_values": {
+            "2026-03-11T00:12:42+05:30": 8,
+            "2024-11-13T22:14:48+05:30": 8,
+            "2024-04-19T21:32:41+05:30": 8,
+            "1998-11-29T03:18:11+05:30": 8,
+            "1998-05-23T11:34:01+05:30": 8
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 12904 distinct values across 21625 non-null rows (0.0% null); Samples: ['2018-06-19T22:43:32+05:30', '2020-06-23T20:20:49+05:30', '2020-06-30T23:16:03+05:30']"
+        }
+      },
+      "declared_primary_keys": [],
+      "declared_foreign_keys": [],
+      "candidate_primary_keys": [
+        "MEDICATION_ID"
+      ]
+    },
+    "PATIENT_MASTER": {
+      "table_name": "PATIENT_MASTER",
+      "row_count": 354,
+      "column_count": 5,
+      "columns": {
+        "PATIENT_ID": {
+          "table_name": "PATIENT_MASTER",
+          "column_name": "PATIENT_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 354,
+          "null_count": 0,
+          "non_null_count": 354,
+          "null_percentage": 0.0,
+          "distinct_count": 354,
+          "uniqueness_ratio": 1.0,
+          "is_unique": true,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc",
+            "e10377b0-54f0-cc84-20dd-4ff3854e371c",
+            "1e961744-0913-72cf-6d66-fc33550d7e01",
+            "da719549-9231-1ab3-0d3c-ddc98c067e64",
+            "3592306e-d369-1e3b-f83a-c85012531d1d"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "fbfb3ed9-b7fa-6047-9440-3960b8407d64": 1,
+            "fbc422fc-9a05-0bab-10da-f4d4885b1f2a": 1,
+            "fa0314f9-e824-17bb-f39d-1c85fadd01a6": 1,
+            "f911ce45-cb8f-356f-5622-5bb9abab55df": 1,
+            "f8e91897-2266-eb26-3d1e-6ff7d3f15b84": 1
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 354 distinct values across 354 non-null rows (0.0% null); 100% unique non-null values (candidate identifier); Samples: ['8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc', 'e10377b0-54f0-cc84-20dd-4ff3854e371c', '1e961744-0913-72cf-6d66-fc33550d7e01']"
+        },
+        "DATE_OF_BIRTH": {
+          "table_name": "PATIENT_MASTER",
+          "column_name": "DATE_OF_BIRTH",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 354,
+          "null_count": 0,
+          "non_null_count": 354,
+          "null_percentage": 0.0,
+          "distinct_count": 296,
+          "uniqueness_ratio": 0.8362,
+          "is_unique": false,
+          "sample_values": [
+            "1944-01-18",
+            "2003-02-03",
+            "1962-02-07",
+            "1975-06-20",
+            "1979-05-09"
+          ],
+          "numeric_stats": null,
+          "date_stats": {
+            "min_date": "1944-01-18",
+            "max_date": "2003-02-03",
+            "likely_format": "%Y-%m-%d"
+          },
+          "top_frequent_values": {
+            "1927-10-01": 9,
+            "1923-04-28": 6,
+            "1948-02-08": 4,
+            "1969-06-25": 3,
+            "1962-02-07": 3
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 296 distinct values across 354 non-null rows (0.0% null); Samples: ['1944-01-18', '2003-02-03', '1962-02-07']"
+        },
+        "GENDER": {
+          "table_name": "PATIENT_MASTER",
+          "column_name": "GENDER",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 354,
+          "null_count": 0,
+          "non_null_count": 354,
+          "null_percentage": 0.0,
+          "distinct_count": 2,
+          "uniqueness_ratio": 0.0056,
+          "is_unique": false,
+          "sample_values": [
+            "male",
+            "female"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "male": 178,
+            "female": 176
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 2 distinct values across 354 non-null rows (0.0% null); Samples: ['male', 'female']"
+        },
+        "LAST_NAME": {
+          "table_name": "PATIENT_MASTER",
+          "column_name": "LAST_NAME",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 354,
+          "null_count": 0,
+          "non_null_count": 354,
+          "null_percentage": 0.0,
+          "distinct_count": 265,
+          "uniqueness_ratio": 0.7486,
+          "is_unique": false,
+          "sample_values": [
+            "Shanahan202",
+            "Hahn503",
+            "Champlin946",
+            "Marquardt819",
+            "Halvorson124"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "Mitchell808": 4,
+            "Bogisich202": 4,
+            "Stehr398": 3,
+            "McCullough561": 3,
+            "Kuhlman484": 3
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 265 distinct values across 354 non-null rows (0.0% null); Samples: ['Shanahan202', 'Hahn503', 'Champlin946']"
+        },
+        "FIRST_NAME": {
+          "table_name": "PATIENT_MASTER",
+          "column_name": "FIRST_NAME",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 354,
+          "null_count": 0,
+          "non_null_count": 354,
+          "null_percentage": 0.0,
+          "distinct_count": 354,
+          "uniqueness_ratio": 1.0,
+          "is_unique": true,
+          "sample_values": [
+            "Abram53 Dustin31",
+            "Adah626 Kerry175",
+            "Adelina682 Marth98",
+            "Adrianne466 Emilia403",
+            "Adrien235 Vinita997"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "Zona368 Piper612": 1,
+            "Yong583 Phil587": 1,
+            "Yelena240 Karolyn830": 1,
+            "Xavier983 Dominick530": 1,
+            "Wilton999": 1
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 354 distinct values across 354 non-null rows (0.0% null); 100% unique non-null values (candidate identifier); Samples: ['Abram53 Dustin31', 'Adah626 Kerry175', 'Adelina682 Marth98']"
+        }
+      },
+      "declared_primary_keys": [],
+      "declared_foreign_keys": [],
+      "candidate_primary_keys": [
+        "PATIENT_ID",
+        "FIRST_NAME"
+      ]
+    },
+    "VITAL_SIGNS": {
+      "table_name": "VITAL_SIGNS",
+      "row_count": 49902,
+      "column_count": 7,
+      "columns": {
+        "OBSERVATION_ID": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "OBSERVATION_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 0,
+          "non_null_count": 49902,
+          "null_percentage": 0.0,
+          "distinct_count": 49902,
+          "uniqueness_ratio": 1.0,
+          "is_unique": true,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-cc30-b230991f8dc5",
+            "8d1edfd0-df60-b5c8-250f-30cda1f2405c",
+            "8d1edfd0-df60-b5c8-abff-9cf01f142114",
+            "8d1edfd0-df60-b5c8-048b-8a6213a01d95",
+            "8d1edfd0-df60-b5c8-8ed7-6ed30ab35945"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "fbfb3ed9-b7fa-6047-fa88-1c41082214d0": 1,
+            "fbfb3ed9-b7fa-6047-f400-ad9d87f3d7de": 1,
+            "fbfb3ed9-b7fa-6047-f3e8-4540c1163c08": 1,
+            "fbfb3ed9-b7fa-6047-efc2-75886ec66d7c": 1,
+            "fbfb3ed9-b7fa-6047-ec35-9a8ad0742dce": 1
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 49902 distinct values across 49902 non-null rows (0.0% null); 100% unique non-null values (candidate identifier); Samples: ['8d1edfd0-df60-b5c8-cc30-b230991f8dc5', '8d1edfd0-df60-b5c8-250f-30cda1f2405c', '8d1edfd0-df60-b5c8-abff-9cf01f142114']"
+        },
+        "PATIENT_ID": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "PATIENT_ID",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 0,
+          "non_null_count": 49902,
+          "null_percentage": 0.0,
+          "distinct_count": 354,
+          "uniqueness_ratio": 0.0071,
+          "is_unique": false,
+          "sample_values": [
+            "8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc",
+            "e10377b0-54f0-cc84-20dd-4ff3854e371c",
+            "1e961744-0913-72cf-6d66-fc33550d7e01",
+            "da719549-9231-1ab3-0d3c-ddc98c067e64",
+            "3592306e-d369-1e3b-f83a-c85012531d1d"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "f8884d3a-0bd6-158e-68f4-1a4dceda41fb": 1397,
+            "6c839f2d-98af-d74d-cf88-1040258d53a9": 1300,
+            "17d6f0e0-7a5b-14d9-cdbe-691d459dfdaa": 1276,
+            "48fb08fe-3c27-de69-d948-ee9dcc70312b": 1271,
+            "3a051b85-bb46-77d9-0437-68a555dcd54a": 1206
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 354 distinct values across 49902 non-null rows (0.0% null); Samples: ['8d1edfd0-df60-b5c8-f51f-a2d2dc613dcc', 'e10377b0-54f0-cc84-20dd-4ff3854e371c', '1e961744-0913-72cf-6d66-fc33550d7e01']"
+        },
+        "LOINC_CODE": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "LOINC_CODE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 0,
+          "non_null_count": 49902,
+          "null_percentage": 0.0,
+          "distinct_count": 20,
+          "uniqueness_ratio": 0.0004,
+          "is_unique": false,
+          "sample_values": [
+            "8302-2",
+            "72514-3",
+            "29463-7",
+            "39156-5",
+            "85354-9"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "72514-3": 9968,
+            "85354-9": 5436,
+            "29463-7": 5358,
+            "9279-1": 5262,
+            "8867-4": 5262
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 20 distinct values across 49902 non-null rows (0.0% null); Samples: ['8302-2', '72514-3', '29463-7']"
+        },
+        "MEASUREMENT_NAME": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "MEASUREMENT_NAME",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 0,
+          "non_null_count": 49902,
+          "null_percentage": 0.0,
+          "distinct_count": 21,
+          "uniqueness_ratio": 0.0004,
+          "is_unique": false,
+          "sample_values": [
+            "Body Height",
+            "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
+            "Body Weight",
+            "Body mass index (BMI) [Ratio]",
+            "Blood pressure panel with all children optional"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "Pain severity - 0-10 verbal numeric rating [Score] - Reported": 9968,
+            "Blood pressure panel with all children optional": 5413,
+            "Body Weight": 5358,
+            "Respiratory rate": 5262,
+            "Heart rate": 5262
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 21 distinct values across 49902 non-null rows (0.0% null); Samples: ['Body Height', 'Pain severity - 0-10 verbal numeric rating [Score] - Reported', 'Body Weight']"
+        },
+        "MEASUREMENT_VALUE": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "MEASUREMENT_VALUE",
+          "data_type": "REAL",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 5439,
+          "non_null_count": 44463,
+          "null_percentage": 10.9,
+          "distinct_count": 8944,
+          "uniqueness_ratio": 0.2012,
+          "is_unique": false,
+          "sample_values": [
+            "191.4",
+            "1.0",
+            "111.1",
+            "30.33",
+            "61.0"
+          ],
+          "numeric_stats": {
+            "min": 0.0,
+            "max": 199.04,
+            "mean": 46.60942306994639,
+            "is_integer": false
+          },
+          "date_stats": null,
+          "top_frequent_values": {
+            "3.0": 2404,
+            "2.0": 1852,
+            "4.0": 1755,
+            "15.0": 1620,
+            "14.0": 1545
+          },
+          "observed_fact_summary": "Observed type 'REAL'; 8944 distinct values across 44463 non-null rows (10.9% null); Samples: ['191.4', '1.0', '111.1']"
+        },
+        "MEASUREMENT_UNIT": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "MEASUREMENT_UNIT",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 5439,
+          "non_null_count": 44463,
+          "null_percentage": 10.9,
+          "distinct_count": 9,
+          "uniqueness_ratio": 0.0002,
+          "is_unique": false,
+          "sample_values": [
+            "cm",
+            "{score}",
+            "kg",
+            "kg/m2",
+            "/min"
+          ],
+          "numeric_stats": null,
+          "date_stats": null,
+          "top_frequent_values": {
+            "/min": 10524,
+            "{score}": 9968,
+            "kg": 9647,
+            "cm": 5663,
+            "kg/m2": 4773
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 9 distinct values across 44463 non-null rows (10.9% null); Samples: ['cm', '{score}', 'kg']"
+        },
+        "MEASUREMENT_DATE": {
+          "table_name": "VITAL_SIGNS",
+          "column_name": "MEASUREMENT_DATE",
+          "data_type": "TEXT",
+          "is_nullable": true,
+          "is_declared_pk": false,
+          "row_count": 49902,
+          "null_count": 0,
+          "non_null_count": 49902,
+          "null_percentage": 0.0,
+          "distinct_count": 11336,
+          "uniqueness_ratio": 0.2272,
+          "is_unique": false,
+          "sample_values": [
+            "2017-05-30T20:20:49+05:30",
+            "2018-06-05T20:20:49+05:30",
+            "2019-06-11T20:20:49+05:30",
+            "2020-06-16T20:20:49+05:30",
+            "2020-07-13T17:25:56+05:30"
+          ],
+          "numeric_stats": null,
+          "date_stats": {
+            "min_date": "2017-05-30T20:20:49+05:30",
+            "max_date": "2020-07-13T17:25:56+05:30",
+            "likely_format": "ISO8601"
+          },
+          "top_frequent_values": {
+            "2018-01-06T11:26:22+05:30": 21,
+            "2016-12-31T11:26:22+05:30": 21,
+            "1986-07-12T11:26:22+05:30": 21,
+            "1985-07-06T11:26:22+05:30": 21,
+            "1984-06-30T11:26:22+05:30": 21
+          },
+          "observed_fact_summary": "Observed type 'TEXT'; 11336 distinct values across 49902 non-null rows (0.0% null); Samples: ['2017-05-30T20:20:49+05:30', '2018-06-05T20:20:49+05:30', '2019-06-11T20:20:49+05:30']"
+        }
+      },
+      "declared_primary_keys": [],
+      "declared_foreign_keys": [],
+      "candidate_primary_keys": [
+        "OBSERVATION_ID"
+      ]
+    }
+  },
+  "candidate_identifiers": [
+    {
+      "table_name": "DIAGNOSIS",
+      "column_name": "DIAGNOSIS_ID",
+      "is_declared_pk": false,
+      "row_count": 13953
+    },
+    {
+      "table_name": "ENCOUNTER",
+      "column_name": "ENCOUNTER_ID",
+      "is_declared_pk": false,
+      "row_count": 22612
+    },
+    {
+      "table_name": "MEDICATION",
+      "column_name": "MEDICATION_ID",
+      "is_declared_pk": false,
+      "row_count": 21625
+    },
+    {
+      "table_name": "PATIENT_MASTER",
+      "column_name": "PATIENT_ID",
+      "is_declared_pk": false,
+      "row_count": 354
+    },
+    {
+      "table_name": "PATIENT_MASTER",
+      "column_name": "FIRST_NAME",
+      "is_declared_pk": false,
+      "row_count": 354
+    },
+    {
+      "table_name": "VITAL_SIGNS",
+      "column_name": "OBSERVATION_ID",
+      "is_declared_pk": false,
+      "row_count": 49902
+    }
+  ],
+  "declared_foreign_keys": [],
+  "observed_value_overlaps": [
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "PATIENT_ID",
+      "target_table": "ENCOUNTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between DIAGNOSIS.PATIENT_ID and ENCOUNTER.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in DIAGNOSIS.PATIENT_ID are fully contained in ENCOUNTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "PATIENT_ID",
+      "target_table": "PATIENT_MASTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between DIAGNOSIS.PATIENT_ID and PATIENT_MASTER.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in DIAGNOSIS.PATIENT_ID are fully contained in PATIENT_MASTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "PATIENT_ID",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between DIAGNOSIS.PATIENT_ID and VITAL_SIGNS.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in DIAGNOSIS.PATIENT_ID are fully contained in VITAL_SIGNS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "DIAGNOSIS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between ENCOUNTER.PATIENT_ID and DIAGNOSIS.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in ENCOUNTER.PATIENT_ID are fully contained in DIAGNOSIS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "PATIENT_MASTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between ENCOUNTER.PATIENT_ID and PATIENT_MASTER.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in ENCOUNTER.PATIENT_ID are fully contained in PATIENT_MASTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between ENCOUNTER.PATIENT_ID and VITAL_SIGNS.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in ENCOUNTER.PATIENT_ID are fully contained in VITAL_SIGNS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "PATIENT_MASTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "DIAGNOSIS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between PATIENT_MASTER.PATIENT_ID and DIAGNOSIS.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in PATIENT_MASTER.PATIENT_ID are fully contained in DIAGNOSIS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "PATIENT_MASTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "ENCOUNTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between PATIENT_MASTER.PATIENT_ID and ENCOUNTER.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in PATIENT_MASTER.PATIENT_ID are fully contained in ENCOUNTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "PATIENT_MASTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between PATIENT_MASTER.PATIENT_ID and VITAL_SIGNS.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in PATIENT_MASTER.PATIENT_ID are fully contained in VITAL_SIGNS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "PATIENT_ID",
+      "target_table": "DIAGNOSIS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between VITAL_SIGNS.PATIENT_ID and DIAGNOSIS.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in VITAL_SIGNS.PATIENT_ID are fully contained in DIAGNOSIS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "PATIENT_ID",
+      "target_table": "ENCOUNTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between VITAL_SIGNS.PATIENT_ID and ENCOUNTER.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in VITAL_SIGNS.PATIENT_ID are fully contained in ENCOUNTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "PATIENT_ID",
+      "target_table": "PATIENT_MASTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 354,
+      "source_distinct_count": 354,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 1.0,
+      "jaccard_similarity": 1.0,
+      "observed_fact": "Observed 354 overlapping distinct values between VITAL_SIGNS.PATIENT_ID and PATIENT_MASTER.PATIENT_ID (Source containment: 100.0%, Target containment: 100.0%)",
+      "inference": "Values in VITAL_SIGNS.PATIENT_ID are fully contained in PATIENT_MASTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PATIENT_ID",
+      "target_table": "DIAGNOSIS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 347,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 0.9802,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between MEDICATION.PATIENT_ID and DIAGNOSIS.PATIENT_ID (Source containment: 100.0%, Target containment: 98.0%)",
+      "inference": "Values in MEDICATION.PATIENT_ID are fully contained in DIAGNOSIS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PATIENT_ID",
+      "target_table": "ENCOUNTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 347,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 0.9802,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between MEDICATION.PATIENT_ID and ENCOUNTER.PATIENT_ID (Source containment: 100.0%, Target containment: 98.0%)",
+      "inference": "Values in MEDICATION.PATIENT_ID are fully contained in ENCOUNTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PATIENT_ID",
+      "target_table": "PATIENT_MASTER",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 347,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 0.9802,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between MEDICATION.PATIENT_ID and PATIENT_MASTER.PATIENT_ID (Source containment: 100.0%, Target containment: 98.0%)",
+      "inference": "Values in MEDICATION.PATIENT_ID are fully contained in PATIENT_MASTER.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PATIENT_ID",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 347,
+      "target_distinct_count": 354,
+      "source_containment": 1.0,
+      "target_containment": 0.9802,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between MEDICATION.PATIENT_ID and VITAL_SIGNS.PATIENT_ID (Source containment: 100.0%, Target containment: 98.0%)",
+      "inference": "Values in MEDICATION.PATIENT_ID are fully contained in VITAL_SIGNS.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "PATIENT_ID",
+      "target_table": "MEDICATION",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 354,
+      "target_distinct_count": 347,
+      "source_containment": 0.9802,
+      "target_containment": 1.0,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between DIAGNOSIS.PATIENT_ID and MEDICATION.PATIENT_ID (Source containment: 98.0%, Target containment: 100.0%)",
+      "inference": "Values in DIAGNOSIS.PATIENT_ID are fully contained in MEDICATION.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "MEDICATION",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 354,
+      "target_distinct_count": 347,
+      "source_containment": 0.9802,
+      "target_containment": 1.0,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between ENCOUNTER.PATIENT_ID and MEDICATION.PATIENT_ID (Source containment: 98.0%, Target containment: 100.0%)",
+      "inference": "Values in ENCOUNTER.PATIENT_ID are fully contained in MEDICATION.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "PATIENT_MASTER",
+      "source_column": "PATIENT_ID",
+      "target_table": "MEDICATION",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 354,
+      "target_distinct_count": 347,
+      "source_containment": 0.9802,
+      "target_containment": 1.0,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between PATIENT_MASTER.PATIENT_ID and MEDICATION.PATIENT_ID (Source containment: 98.0%, Target containment: 100.0%)",
+      "inference": "Values in PATIENT_MASTER.PATIENT_ID are fully contained in MEDICATION.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "PATIENT_ID",
+      "target_table": "MEDICATION",
+      "target_column": "PATIENT_ID",
+      "relationship_type": "VALUE_OVERLAP_INCLUSION",
+      "overlap_count": 347,
+      "source_distinct_count": 354,
+      "target_distinct_count": 347,
+      "source_containment": 0.9802,
+      "target_containment": 1.0,
+      "jaccard_similarity": 0.9802,
+      "observed_fact": "Observed 347 overlapping distinct values between VITAL_SIGNS.PATIENT_ID and MEDICATION.PATIENT_ID (Source containment: 98.0%, Target containment: 100.0%)",
+      "inference": "Values in VITAL_SIGNS.PATIENT_ID are fully contained in MEDICATION.PATIENT_ID. Consistent with a foreign-key patient reference."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "MEASUREMENT_DATE",
+      "target_table": "MEDICATION",
+      "target_column": "PRESCRIBED_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 7774,
+      "source_distinct_count": 11336,
+      "target_distinct_count": 12904,
+      "source_containment": 0.6858,
+      "target_containment": 0.6024,
+      "jaccard_similarity": 0.4721,
+      "observed_fact": "Observed 7774 overlapping distinct values between VITAL_SIGNS.MEASUREMENT_DATE and MEDICATION.PRESCRIBED_DATE (Source containment: 68.6%, Target containment: 60.2%)",
+      "inference": "Moderate value overlap (68.6%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PRESCRIBED_DATE",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "MEASUREMENT_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 7774,
+      "source_distinct_count": 12904,
+      "target_distinct_count": 11336,
+      "source_containment": 0.6024,
+      "target_containment": 0.6858,
+      "jaccard_similarity": 0.4721,
+      "observed_fact": "Observed 7774 overlapping distinct values between MEDICATION.PRESCRIBED_DATE and VITAL_SIGNS.MEASUREMENT_DATE (Source containment: 60.2%, Target containment: 68.6%)",
+      "inference": "Moderate value overlap (60.2%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "MEASUREMENT_DATE",
+      "target_table": "ENCOUNTER",
+      "target_column": "START_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 6244,
+      "source_distinct_count": 11336,
+      "target_distinct_count": 22107,
+      "source_containment": 0.5508,
+      "target_containment": 0.2824,
+      "jaccard_similarity": 0.2296,
+      "observed_fact": "Observed 6244 overlapping distinct values between VITAL_SIGNS.MEASUREMENT_DATE and ENCOUNTER.START_DATE (Source containment: 55.1%, Target containment: 28.2%)",
+      "inference": "Moderate value overlap (55.1%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "ONSET_DATE",
+      "target_table": "ENCOUNTER",
+      "target_column": "START_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 5488,
+      "source_distinct_count": 11431,
+      "target_distinct_count": 22107,
+      "source_containment": 0.4801,
+      "target_containment": 0.2482,
+      "jaccard_similarity": 0.1957,
+      "observed_fact": "Observed 5488 overlapping distinct values between DIAGNOSIS.ONSET_DATE and ENCOUNTER.START_DATE (Source containment: 48.0%, Target containment: 24.8%)",
+      "inference": "Moderate value overlap (48.0%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PRESCRIBED_DATE",
+      "target_table": "ENCOUNTER",
+      "target_column": "START_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 5825,
+      "source_distinct_count": 12904,
+      "target_distinct_count": 22107,
+      "source_containment": 0.4514,
+      "target_containment": 0.2635,
+      "jaccard_similarity": 0.1996,
+      "observed_fact": "Observed 5825 overlapping distinct values between MEDICATION.PRESCRIBED_DATE and ENCOUNTER.START_DATE (Source containment: 45.1%, Target containment: 26.3%)",
+      "inference": "Moderate value overlap (45.1%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "MEASUREMENT_DATE",
+      "target_table": "ENCOUNTER",
+      "target_column": "END_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 4289,
+      "source_distinct_count": 11336,
+      "target_distinct_count": 22585,
+      "source_containment": 0.3784,
+      "target_containment": 0.1899,
+      "jaccard_similarity": 0.1447,
+      "observed_fact": "Observed 4289 overlapping distinct values between VITAL_SIGNS.MEASUREMENT_DATE and ENCOUNTER.END_DATE (Source containment: 37.8%, Target containment: 19.0%)",
+      "inference": "Moderate value overlap (37.8%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "MEDICATION",
+      "source_column": "PRESCRIBED_DATE",
+      "target_table": "ENCOUNTER",
+      "target_column": "END_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 4535,
+      "source_distinct_count": 12904,
+      "target_distinct_count": 22585,
+      "source_containment": 0.3514,
+      "target_containment": 0.2008,
+      "jaccard_similarity": 0.1465,
+      "observed_fact": "Observed 4535 overlapping distinct values between MEDICATION.PRESCRIBED_DATE and ENCOUNTER.END_DATE (Source containment: 35.1%, Target containment: 20.1%)",
+      "inference": "Moderate value overlap (35.1%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "ONSET_DATE",
+      "target_table": "ENCOUNTER",
+      "target_column": "END_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 3515,
+      "source_distinct_count": 11431,
+      "target_distinct_count": 22585,
+      "source_containment": 0.3075,
+      "target_containment": 0.1556,
+      "jaccard_similarity": 0.1152,
+      "observed_fact": "Observed 3515 overlapping distinct values between DIAGNOSIS.ONSET_DATE and ENCOUNTER.END_DATE (Source containment: 30.7%, Target containment: 15.6%)",
+      "inference": "Moderate value overlap (30.7%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "START_DATE",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "MEASUREMENT_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 6244,
+      "source_distinct_count": 22107,
+      "target_distinct_count": 11336,
+      "source_containment": 0.2824,
+      "target_containment": 0.5508,
+      "jaccard_similarity": 0.2296,
+      "observed_fact": "Observed 6244 overlapping distinct values between ENCOUNTER.START_DATE and VITAL_SIGNS.MEASUREMENT_DATE (Source containment: 28.2%, Target containment: 55.1%)",
+      "inference": "Moderate value overlap (28.2%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "START_DATE",
+      "target_table": "MEDICATION",
+      "target_column": "PRESCRIBED_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 5825,
+      "source_distinct_count": 22107,
+      "target_distinct_count": 12904,
+      "source_containment": 0.2635,
+      "target_containment": 0.4514,
+      "jaccard_similarity": 0.1996,
+      "observed_fact": "Observed 5825 overlapping distinct values between ENCOUNTER.START_DATE and MEDICATION.PRESCRIBED_DATE (Source containment: 26.3%, Target containment: 45.1%)",
+      "inference": "Moderate value overlap (26.3%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "START_DATE",
+      "target_table": "DIAGNOSIS",
+      "target_column": "ONSET_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 5488,
+      "source_distinct_count": 22107,
+      "target_distinct_count": 11431,
+      "source_containment": 0.2482,
+      "target_containment": 0.4801,
+      "jaccard_similarity": 0.1957,
+      "observed_fact": "Observed 5488 overlapping distinct values between ENCOUNTER.START_DATE and DIAGNOSIS.ONSET_DATE (Source containment: 24.8%, Target containment: 48.0%)",
+      "inference": "Moderate value overlap (24.8%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "VITAL_SIGNS",
+      "source_column": "MEASUREMENT_DATE",
+      "target_table": "DIAGNOSIS",
+      "target_column": "ONSET_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 2803,
+      "source_distinct_count": 11336,
+      "target_distinct_count": 11431,
+      "source_containment": 0.2473,
+      "target_containment": 0.2452,
+      "jaccard_similarity": 0.1404,
+      "observed_fact": "Observed 2803 overlapping distinct values between VITAL_SIGNS.MEASUREMENT_DATE and DIAGNOSIS.ONSET_DATE (Source containment: 24.7%, Target containment: 24.5%)",
+      "inference": "Moderate value overlap (24.7%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "DIAGNOSIS",
+      "source_column": "ONSET_DATE",
+      "target_table": "VITAL_SIGNS",
+      "target_column": "MEASUREMENT_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 2803,
+      "source_distinct_count": 11431,
+      "target_distinct_count": 11336,
+      "source_containment": 0.2452,
+      "target_containment": 0.2473,
+      "jaccard_similarity": 0.1404,
+      "observed_fact": "Observed 2803 overlapping distinct values between DIAGNOSIS.ONSET_DATE and VITAL_SIGNS.MEASUREMENT_DATE (Source containment: 24.5%, Target containment: 24.7%)",
+      "inference": "Moderate value overlap (24.5%) indicates shared domain or concept pool."
+    },
+    {
+      "source_table": "ENCOUNTER",
+      "source_column": "END_DATE",
+      "target_table": "MEDICATION",
+      "target_column": "PRESCRIBED_DATE",
+      "relationship_type": "VALUE_OVERLAP_PARTIAL",
+      "overlap_count": 4535,
+      "source_distinct_count": 22585,
+      "target_distinct_count": 12904,
+      "source_containment": 0.2008,
+      "target_containment": 0.3514,
+      "jaccard_similarity": 0.1465,
+      "observed_fact": "Observed 4535 overlapping distinct values between ENCOUNTER.END_DATE and MEDICATION.PRESCRIBED_DATE (Source containment: 20.1%, Target containment: 35.1%)",
+      "inference": "Moderate value overlap (20.1%) indicates shared domain or concept pool."
+    }
+  ],
+  "summary": {
+    "total_tables": 5,
+    "total_columns": 30,
+    "total_rows": 108446,
+    "declared_fk_count": 0,
+    "discovered_overlap_count": 34
+  }
+}

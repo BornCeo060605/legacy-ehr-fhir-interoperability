@@ -1,0 +1,271 @@
+/* View-Specific Clinical Styles */
+
+/* Schema Explorer */
+.schema-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  min-height: 500px;
+}
+
+.schema-sidebar {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.table-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.table-list-item:hover {
+  background: var(--bg-surface-hover);
+}
+
+.table-list-item.selected {
+  background: var(--primary-subtle);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.fk-badge-declared {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.fk-badge-overlap {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Mapping Workspace Filters */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+}
+
+.confidence-bar-container {
+  width: 90px;
+  height: 8px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.confidence-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+.confidence-bar-high { background: var(--decision-accepted); }
+.confidence-bar-mid { background: var(--decision-review); }
+.confidence-bar-low { background: var(--decision-unsupported); }
+
+/* Evidence Cards */
+.evidence-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evidence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.evidence-source-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--clinical-blue);
+}
+
+.evidence-score {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Terminal / Real-time Run Log */
+.terminal-window {
+  background: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: var(--radius-lg);
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  padding: 16px;
+  height: 280px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.terminal-line {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.terminal-time {
+  color: #64748b;
+  user-select: none;
+}
+
+.terminal-info { color: #38bdf8; }
+.terminal-success { color: #4ade80; }
+.terminal-warn { color: #fbbf24; }
+.terminal-error { color: #f87171; }
+
+/* Evaluation Chart Gallery */
+.chart-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.chart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.chart-img-wrap {
+  width: 100%;
+  height: 230px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.chart-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.chart-card-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chart-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chart-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.chart-card-footer {
+  padding: 10px 16px;
+  background: var(--bg-surface-hover);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Canvas / Interactive Chart Container */
+.chart-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+/* Provenance Step Trace */
+.provenance-step {
+  display: flex;
+  gap: 12px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.provenance-step::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 11px;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-subtle);
+}
+
+.provenance-step:last-child::before {
+  display: none;
+}
+
+.provenance-node {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary-subtle);
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--primary);
+  font-weight: bold;
+  z-index: 1;
+}
+
+.provenance-content {
+  flex: 1;
+}
