@@ -1,0 +1,125 @@
+/* Clinical Design Tokens and Theme Variables */
+:root {
+  /* Brand / Medical Palette */
+  --primary-navy: #0f2d4a;
+  --primary: #0f4c81;
+  --primary-light: #1b6ca8;
+  --primary-subtle: #e8f1f8;
+  --clinical-blue: #2563eb;
+  --clinical-teal: #0f766e;
+  --clinical-teal-light: #14b8a6;
+  --accent: #3b82f6;
+
+  /* Decision Semantic Colors */
+  --decision-accepted: #059669;
+  --decision-accepted-bg: #ecfdf5;
+  --decision-accepted-border: #a7f3d0;
+  --decision-accepted-text: #065f46;
+
+  --decision-review: #d97706;
+  --decision-review-bg: #fffbeb;
+  --decision-review-border: #fde68a;
+  --decision-review-text: #92400e;
+
+  --decision-unsupported: #dc2626;
+  --decision-unsupported-bg: #fef2f2;
+  --decision-unsupported-border: #fecaca;
+  --decision-unsupported-text: #991b1b;
+
+  /* Neutral Backgrounds and Surfaces */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-hover: #f1f5f9;
+  --bg-sidebar: #0f172a;
+  --bg-sidebar-active: #1e293b;
+  --bg-sidebar-hover: #1e293b80;
+
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverted: #ffffff;
+  --text-sidebar: #cbd5e1;
+  --text-sidebar-active: #ffffff;
+
+  /* Borders & Dividers */
+  --border-subtle: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-focus: #2563eb;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+  --shadow-drawer: -4px 0 24px rgba(0, 0, 0, 0.12);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, Monaco, monospace;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --sidebar-width: 250px;
+  --sidebar-width-collapsed: 72px;
+  --topbar-height: 64px;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  --primary-navy: #09131f;
+  --primary: #1b6ca8;
+  --primary-light: #2d8ad1;
+  --primary-subtle: #13283b;
+  --clinical-blue: #3b82f6;
+  --clinical-teal: #14b8a6;
+  --clinical-teal-light: #2dd4bf;
+  --accent: #60a5fa;
+
+  --decision-accepted: #10b981;
+  --decision-accepted-bg: #064e3b33;
+  --decision-accepted-border: #05966966;
+  --decision-accepted-text: #34d399;
+
+  --decision-review: #f59e0b;
+  --decision-review-bg: #78350f33;
+  --decision-review-border: #d9770666;
+  --decision-review-text: #fbbf24;
+
+  --decision-unsupported: #ef4444;
+  --decision-unsupported-bg: #7f1d1d33;
+  --decision-unsupported-border: #dc262666;
+  --decision-unsupported-text: #f87171;
+
+  --bg-app: #090e17;
+  --bg-surface: #111827;
+  --bg-surface-elevated: #1a2234;
+  --bg-surface-hover: #1f2937;
+  --bg-sidebar: #0b1120;
+  --bg-sidebar-active: #1e293b;
+  --bg-sidebar-hover: #1e293b80;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-inverted: #0f172a;
+  --text-sidebar: #94a3b8;
+  --text-sidebar-active: #ffffff;
+
+  --border-subtle: #1f293d;
+  --border-medium: #334155;
+  --border-focus: #3b82f6;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+  --shadow-drawer: -4px 0 24px rgba(0, 0, 0, 0.7);
+}
