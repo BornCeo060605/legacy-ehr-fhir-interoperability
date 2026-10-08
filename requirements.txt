@@ -1,5 +1,10 @@
-# Core Dependencies for Phase 1 Legacy EHR to FHIR R4 Mapping System
-pydantic>=2.9.0
+# Core Dependencies for Legacy EHR to FHIR R4 Interoperability Platform
+pydantic>=2.9.0,<2.11.0
+pydantic-settings>=2.0.0
+fastapi>=0.110.0
+uvicorn>=0.28.0
+sqlalchemy>=2.0.0
+python-multipart>=0.0.9
 python-dotenv>=1.0.0
 pytest>=8.0.0
 chromadb>=0.5.0

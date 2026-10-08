@@ -59,7 +59,11 @@ Upgrade pip and install all required packages:
 
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-pip install fastapi uvicorn sqlalchemy python-multipart
+
+* Note on Python 3.10:
+  requirements.txt pins 'pydantic>=2.9.0,<2.11.0' to ensure compatibility with
+  Python 3.10 standard typing. If you encounter any ForwardRef TypeError, run:
+  pip install "pydantic>=2.9.0,<2.11.0"
 
 ================================================================================
 5. CONFIGURATION (.env SETUP)
