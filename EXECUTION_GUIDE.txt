@@ -1,0 +1,227 @@
+================================================================================
+LEGACY EHR -> FHIR R4 INTEROPERABILITY PLATFORM
+PROJECT SETUP & EXECUTION GUIDE
+================================================================================
+
+GitHub Repository:
+https://github.com/BornCeo060605/legacy-ehr-fhir-interoperability
+
+Primary Branch: main
+Collaborative Branches:
+- feature/backend-pipeline-engine  (Data Platform & Database Infrastructure)
+- feature/ai-semantic-retrieval    (Core AI & Terminology Knowledge)
+- feature/clinical-review-ui-eval  (Full-Stack Application & AI Evaluation)
+
+================================================================================
+1. SYSTEM PREREQUISITES
+================================================================================
+
+1. Python 3.10 or higher installed.
+   Verify version:
+   python --version
+
+2. Git installed.
+   Verify version:
+   git --version
+
+3. Operating System: Windows, macOS, or Linux.
+
+================================================================================
+2. CLONING THE REPOSITORY
+================================================================================
+
+Open your terminal (PowerShell, Command Prompt, or Bash) and run:
+
+git clone https://github.com/BornCeo060605/legacy-ehr-fhir-interoperability.git
+cd legacy-ehr-fhir-interoperability
+
+================================================================================
+3. VIRTUAL ENVIRONMENT SETUP
+================================================================================
+
+It is strongly recommended to use a clean Python virtual environment.
+
+[On Windows (PowerShell / Command Prompt)]:
+python -m venv venv
+.\venv\Scripts\activate
+
+[On macOS / Linux]:
+python3 -m venv venv
+source venv/bin/activate
+
+Verify your environment is active (you will see '(venv)' in your prompt).
+
+================================================================================
+4. INSTALLING DEPENDENCIES
+================================================================================
+
+Upgrade pip and install all required packages:
+
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+pip install fastapi uvicorn sqlalchemy python-multipart
+
+================================================================================
+5. CONFIGURATION (.env SETUP)
+================================================================================
+
+The repository includes a template configuration file named '.env.example'.
+
+1. Create a local '.env' file from the template:
+
+   [On Windows PowerShell]:
+   Copy-Item .env.example .env
+
+   [On Windows Command Prompt]:
+   copy .env.example .env
+
+   [On macOS / Linux]:
+   cp .env.example .env
+
+2. (Optional - For Live LLM Reasoning):
+   Open '.env' in any text editor and provide your OpenRouter API key:
+   OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+   Note: The platform features deterministic fallback rules and cached 
+   knowledge sources (HL7 FHIR R4, LOINC, RxNorm, UCUM, SNOMED CT) and will
+   run offline validation even without an external API key.
+
+================================================================================
+6. RUNNING THE WEB APPLICATION
+================================================================================
+
+Start the unified FastAPI server with Uvicorn:
+
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+
+Once the server boots, you will see output similar to:
+   INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+   INFO:     Application startup complete.
+
+Open your web browser and navigate to:
+
+- Web Application Interface:
+  http://localhost:8000/
+
+- Interactive Swagger API Documentation:
+  http://localhost:8000/api/docs
+
+- Alternative API Documentation (ReDoc):
+  http://localhost:8000/api/redoc
+
+================================================================================
+7. EXPLORING THE WEB APPLICATION FEATURES
+================================================================================
+
+Once inside the web interface (http://localhost:8000/):
+
+1. Dashboard (#dashboard):
+   View high-level KPIs, decision distribution charts, FHIR resource breakdown,
+   and cross-hospital mapping summaries.
+
+2. Projects (#projects):
+   Create new interoperability projects or select existing scopes.
+
+3. Databases (#databases):
+   Upload and inspect legacy hospital databases with automatic SHA-256 
+   cryptographic fingerprinting and table row statistics.
+
+4. Schema Explorer (#schema):
+   Inspect table structures, column data types, null percentages, distinct 
+   ratios, primary keys, and foreign key containment overlaps.
+
+5. Analysis Runs (#analysis):
+   Execute autonomous semantic discovery and observe real-time progress via 
+   Server-Sent Events (SSE).
+
+6. Mapping Workspace (#mappings):
+   Search and filter candidate mappings by target FHIR resource, hospital, 
+   or decision tier (ACCEPTED, REVIEW, UNSUPPORTED). Click any row to slide 
+   out the AI Provenance & Evidence Drawer.
+
+7. Clinical Review Queue (#review):
+   Review ambiguous mappings requiring human sign-off. Clinicians can accept, 
+   reject, or modify mappings while preserving automated audit trails.
+
+8. Reports & Evaluation Gallery (#reports):
+   Browse and download markdown evaluation reports and 10 publication-ready 
+   300 DPI analytical charts.
+
+================================================================================
+8. RUNNING THE AUTOMATED TEST SUITE
+================================================================================
+
+Run all 36 unit, integration, and end-to-end tests:
+
+pytest tests/ -v
+
+Expected output:
+   ======================= 36 passed in ~25-30s =======================
+
+Test Suite Coverage:
+- Schema Profiler & Relationship Tests:   tests/test_schema_profiler.py
+- Schema Intelligence & Role Detection:    tests/test_schema_intelligence.py
+- Hybrid Evidence Retrieval Tests:        tests/test_hybrid_retrieval.py
+- Retrieval Strategy Tests:               tests/test_retrieval_strategy.py
+- Semantic Reasoning Agent Tests:         tests/test_semantic_agent.py
+- FHIR Mapping Agent Tests:               tests/test_fhir_mapping_agent.py
+- Confidence & Decision Engine Tests:     tests/test_confidence_decision_engine.py
+- REST API Service Endpoints Tests:       tests/test_api_endpoints.py
+
+================================================================================
+9. RUNNING COMMAND-LINE UTILITIES & SCRIPTS
+================================================================================
+
+1. Run Database Profiling on a Specific Hospital Database:
+   python scripts/profile_database.py --db data/hospital_a.db
+
+2. Inspect Profile Summary:
+   python scripts/inspect_summary.py
+
+3. Compare Multiple Hospital Schemas:
+   python scripts/compare_hospitals.py
+
+4. Check Medical Knowledge & Ontology Sources:
+   python scripts/check_knowledge_sources.py
+
+5. Regenerate 10 Publication-Grade (300 DPI) Evaluation Charts:
+   python scripts/generate_evaluation_charts.py
+   (Charts will be saved to outputs/reports/charts/ as both PNG and PDF)
+
+================================================================================
+10. SWITCHING BETWEEN COLLABORATIVE BRANCHES
+================================================================================
+
+To inspect or demonstrate the specific contributions of each team member:
+
+1. Switch to Data Platform & Database Backend branch:
+   git checkout feature/backend-pipeline-engine
+
+2. Switch to Core AI & Terminology Knowledge branch:
+   git checkout feature/ai-semantic-retrieval
+
+3. Switch to Full-Stack Application & AI Evaluation branch:
+   git checkout feature/clinical-review-ui-eval
+
+4. Switch back to the fully integrated production branch:
+   git checkout main
+
+================================================================================
+11. SHUTTING DOWN THE APPLICATION
+================================================================================
+
+In the terminal running Uvicorn, press:
+CTRL + C
+
+To deactivate the virtual environment:
+deactivate
+
+================================================================================
+FOR ADDITIONAL DETAILS & ARCHITECTURE
+================================================================================
+- README.md: Overall platform overview, benchmarks, and capabilities
+- COLLABORATION.md: Full engineering team ownership and role matrix
+- docs/architecture.md: Deep-dive system architecture specification
+- docs/api.md: REST API endpoint references
+- docs/security.md: Healthcare data governance and security compliance
+================================================================================
